@@ -9,7 +9,7 @@ const routes: Routes = [
   {
     path: 'repositories',
     loadChildren: () => import('./repositories/repositories.module').then(m => m.RepositoriesModule)
-  },
+  }
 ];
 
 @NgModule({

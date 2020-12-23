@@ -1,0 +1,9 @@
+<div class="toolbar-container" [class.scrolled]="this.scrolled" fxLayout="row" fxLayoutAlign="space-between center" [@fadeInAnimation]>
+  <div fxLayout="row">
+    <i-feather name="package" class="icon" [class.scrolled]="scrolled"></i-feather>
+    <h1 class="title white" [class.scrolled]="scrolled">Docker registry</h1>
+  </div>
+
+  <app-navbar [scrolled]="scrolled"></app-navbar>
+
+</div>

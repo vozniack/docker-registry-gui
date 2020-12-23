@@ -1,0 +1,45 @@
+@import "variables";
+
+/* Colors */
+
+.white {
+  color: $white;
+}
+
+.primary {
+  color: $primary;
+}
+
+.secondary {
+  color: $secondary;
+}
+
+.gray {
+  color: $gray;
+}
+
+/* General */
+
+body {
+  margin: 0;
+  padding: 0;
+
+  background-color: $gray-light;
+  font-family: 'Lato', sans-serif;
+}
+
+::selection {
+  color: $white;
+  background: $primary;
+}
+
+/* Card */
+
+.card {
+  background-color: $white;
+  border-color: $gray;
+  padding: 12px;
+  margin: 12px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px $gray-transparent;
+}
