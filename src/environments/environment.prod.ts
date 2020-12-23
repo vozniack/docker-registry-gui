@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  registryUrl: 'http://localhost:5000/v2/'
 };
