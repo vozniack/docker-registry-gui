@@ -24,20 +24,11 @@ ul {
         background-color: $white;
         color: $primary;
       }
-
-      &.scrolled {
-        font-size: 16px;
-        padding: 10px 14px;
-      }
     }
   }
 
   .icon {
     width: 18px;
     margin-right: 16px;
-
-    &.scrolled {
-      width: 16px;
-    }
   }
 }

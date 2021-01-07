@@ -1,4 +1,4 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {fadeInAnimation} from '../../shared/animations/fadeInAnimation';
 
 @Component({
@@ -9,17 +9,10 @@ import {fadeInAnimation} from '../../shared/animations/fadeInAnimation';
 })
 export class ToolbarComponent implements OnInit {
 
-  scrolled = false;
-
   constructor() {
   }
 
   ngOnInit(): void {
-  }
-
-  @HostListener('window:scroll', ['$event'])
-  doSomething(): void {
-    this.scrolled = window.pageYOffset > 0;
   }
 
 }

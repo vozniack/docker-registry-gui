@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {fadeInAnimation} from '../../../shared/animations/fadeInAnimation';
 
 @Component({
@@ -21,8 +21,6 @@ export class NavbarComponent implements OnInit {
       icon: 'server'
     }
   ];
-
-  @Input() scrolled: boolean;
 
   constructor() { }
 

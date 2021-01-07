@@ -1,8 +1,7 @@
 <ul>
   <li *ngFor="let route of routes">
-    <a [routerLink]="route.route" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }"
-       [class.scrolled]="scrolled">
-      <i-feather name="{{route.icon}}" class="icon" [class.scrolled]="scrolled"></i-feather>
+    <a [routerLink]="route.route" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
+      <i-feather name="{{route.icon}}" class="icon"></i-feather>
       {{route.name}}
     </a>
   </li>
