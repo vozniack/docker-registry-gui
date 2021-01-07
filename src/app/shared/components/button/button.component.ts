@@ -12,10 +12,13 @@ export class ButtonComponent {
   style = 'primary';
 
   @Input()
+  shape = 'rect';
+
+  @Input()
   size = '';
 
   @Input()
-  text = 'Button';
+  text = undefined;
 
   @Input()
   icon: string = undefined;

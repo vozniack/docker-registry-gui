@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {fadeInAnimation} from '../../animations/fadeInAnimation';
 import {Router} from '@angular/router';
 
@@ -14,10 +14,13 @@ export class CardComponent {
   title = '';
 
   @Input()
-  subtitle = undefined;
+  subtitle: string = undefined;
 
   @Input()
-  iconLeft = 'box';
+  description: string = undefined;
+
+  @Input()
+  iconLeft = undefined;
 
   @Input()
   iconRight: string = undefined;
@@ -29,7 +32,13 @@ export class CardComponent {
   routeText: string = undefined;
 
   @Input()
-  routeStyle = 'button';
+  action = 'none';
+
+  @Input()
+  active = false;
+
+  @Output()
+  emitter = new EventEmitter<string>();
 
   constructor(private router: Router) {
   }
@@ -38,4 +47,9 @@ export class CardComponent {
     this.router.navigate([this.route]).then();
   }
 
+  emit(): void {
+    if (this.action === 'emit') {
+      this.emitter.emit(this.title);
+    }
+  }
 }

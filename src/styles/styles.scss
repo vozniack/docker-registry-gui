@@ -29,6 +29,21 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 6px;
 }
 
+/* Containers */
+
+.card-container {
+  background-color: $white;
+  border-color: $gray;
+  padding: 16px 24px;
+  margin: 12px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px $gray-transparent;
+}
+
+.bar-container {
+  padding: 24px 16px 12px;
+}
+
 /* General */
 
 body {

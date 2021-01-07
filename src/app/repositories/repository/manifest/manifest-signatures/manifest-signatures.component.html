@@ -1,0 +1,14 @@
+<div *ngIf="manifest" [@fadeInAnimation]>
+  <div class="bar-container" fxLayout="row" fxLayoutAlign="space-between center">
+    <h3 class="spacing-title secondary">Signatures</h3>
+    <i-feather class="primary" name="key"></i-feather>
+  </div>
+
+  <div *ngFor="let signature of manifest.signatures">
+    <div fxLayout="column">
+      <div fxFlex="100">
+        <app-card [title]="'Protected'" [description]="signature.protected"></app-card>
+      </div>
+    </div>
+  </div>
+</div>

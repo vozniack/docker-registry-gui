@@ -1,0 +1,20 @@
+<div *ngIf="manifest" [@fadeInAnimation]>
+  <div class="bar-container" fxLayout="row" fxLayoutAlign="space-between center">
+    <h3 class="spacing-title secondary">Basic information</h3>
+    <i-feather class="primary" name="info"></i-feather>
+  </div>
+
+    <div fxLayout="row">
+      <div fxFlex="33">
+        <app-card [title]="'Schema version'" [description]="manifest.schemaVersion"></app-card>
+      </div>
+
+      <div fxFlex="34">
+        <app-card [title]="'Architecture'" [description]="manifest.architecture"></app-card>
+      </div>
+
+      <div fxFlex="33">
+        <app-card [title]="'Tag'" [description]="manifest.tag"></app-card>
+      </div>
+    </div>
+</div>

@@ -2,15 +2,6 @@
 
 /* Card */
 
-.card {
-  background-color: $white;
-  border-color: $gray;
-  padding: 16px 24px;
-  margin: 12px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px $gray-transparent;
-}
-
 .route-card {
   transition: 0.2s;
 
@@ -20,8 +11,12 @@
   }
 }
 
+.active-card {
+  box-shadow: 0 0 4px $secondary;
+}
+
 .title {
-  color: $secondary;
+  color: $gray-dark;
   padding: 4px 0 2px 0;
 }
 

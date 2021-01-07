@@ -1,0 +1,12 @@
+<div class="bar-container" [@fadeInAnimation]>
+  <h2 class="spacing-title secondary">{{repository}}</h2>
+</div>
+
+<div fxLayout="row" *ngIf="tags">
+  <app-card *ngFor="let tag of tags.tags" [title]="tag" [iconLeft]="'tag'" [action]="'emit'"
+            [active]="tag === active" (emitter)="setActive($event)">
+  </app-card>
+</div>
+
+<app-manifest *ngIf="manifest" [manifest]="manifest"></app-manifest>
+

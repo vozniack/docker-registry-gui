@@ -5,7 +5,10 @@
 <app-card *ngFor="let repository of repositories"
           [title]="repository"
           [subtitle]="'Local docker image'"
+          [iconLeft]="'box'"
           [iconRight]="'arrow-right-circle'"
+          [action]="'route'"
+          [route]="'repositories/' + repository"
           [routeText]="'Show details'">
 </app-card>
 
