@@ -7,19 +7,11 @@
 
   transition: 0.2s;
 
-  position: sticky;
-  top: 0;
-
   .icon {
-    margin: 30px 32px 0 12px;
+    margin: 10px 32px 0 12px;
     color: $white;
     transform: scale(1.75);
     transition: 0.2s;
-
-    &.scrolled {
-      margin-top: 26px;
-      transform: scale(1.5);
-    }
   }
 
   .title {
@@ -27,13 +19,5 @@
     font-weight: 800;
     letter-spacing: 2px;
     transition: 0.2s;
-
-    &.scrolled {
-      font-size: 28px;
-    }
-  }
-
-  &.scrolled {
-    padding: 0 24px;
   }
 }

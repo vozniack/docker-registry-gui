@@ -18,6 +18,17 @@
   color: $gray;
 }
 
+/* Fonts */
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+.spacing-title {
+  text-transform: uppercase;
+  letter-spacing: 6px;
+}
+
 /* General */
 
 body {
@@ -31,15 +42,4 @@ body {
 ::selection {
   color: $white;
   background: $primary;
-}
-
-/* Card */
-
-.card {
-  background-color: $white;
-  border-color: $gray;
-  padding: 12px;
-  margin: 12px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px $gray-transparent;
 }

@@ -1,11 +1,13 @@
 import {NgModule} from '@angular/core';
-import {Home, Package, Server} from 'angular-feather/icons';
+import {Home, Package, Server, Box, ArrowRightCircle} from 'angular-feather/icons';
 import {FeatherModule} from 'angular-feather';
 
 const icons = {
   Package,
+  Box,
   Home,
   Server,
+  ArrowRightCircle
 };
 
 @NgModule({

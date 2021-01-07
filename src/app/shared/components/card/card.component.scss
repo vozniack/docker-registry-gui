@@ -1,0 +1,36 @@
+@import "../../../../styles/variables";
+
+/* Card */
+
+.card {
+  background-color: $white;
+  border-color: $gray;
+  padding: 16px 24px;
+  margin: 12px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px $gray-transparent;
+}
+
+.route-card {
+  transition: 0.2s;
+
+  &:hover {
+    box-shadow: 0 0 4px $primary;
+    cursor: pointer;
+  }
+}
+
+.title {
+  color: $secondary;
+  padding: 4px 0 2px 0;
+}
+
+.subtitle {
+  color: $gray;
+  padding: 2px 0 4px 0;
+}
+
+.icon {
+  color: $gray;
+  margin-right: 24px;
+}
