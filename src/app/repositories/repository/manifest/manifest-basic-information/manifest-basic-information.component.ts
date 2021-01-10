@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {fadeInAnimation} from '../../../../shared/animations/fadeInAnimation';
 import {Manifest} from '../../../../core/model/manifest';
 
@@ -8,14 +8,8 @@ import {Manifest} from '../../../../core/model/manifest';
   styleUrls: ['./manifest-basic-information.component.scss'],
   animations: [fadeInAnimation]
 })
-export class ManifestBasicInformationComponent implements OnInit {
+export class ManifestBasicInformationComponent {
 
   @Input()
   manifest: Manifest;
-
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 }

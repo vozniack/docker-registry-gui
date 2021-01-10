@@ -47,6 +47,10 @@ export class RepositoryComponent implements OnInit {
 
       this.repositoriesService.getManifest(this.repository, this.active).subscribe(response => {
         this.manifest = response;
+
+        this.manifest.history.forEach(history => {
+          history.compatibility = JSON.parse(history.v1Compatibility);
+        });
       });
     }
   }

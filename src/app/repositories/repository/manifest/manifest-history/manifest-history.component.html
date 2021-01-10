@@ -1,14 +1,22 @@
 <div *ngIf="manifest" [@fadeInAnimation]>
   <div class="bar-container" fxLayout="row" fxLayoutAlign="space-between center">
     <h3 class="spacing-title secondary">History</h3>
-    <i-feather class="primary" name="book"></i-feather>
+    <i-feather class="secondary" name="book"></i-feather>
   </div>
 
   <div fxLayout="column">
-    <div fxFlex="100" class="card-container" >
-      <div fxLayout="row" fxLayoutAlign="center center">
-        <h5 class="subtitle">In progress...</h5>
+    <div class="card-container" *ngFor="let history of manifest.history">
+      <div fxLayoutAlign="space-between end" class="date">
+        <h4 class="title">{{history.compatibility.id}}</h4>
+        <h4 class="subtitle">{{history.compatibility.created | date: 'full'}}</h4>
       </div>
+
+      <div fxLayoutAlign="space-between center" *ngIf="history.compatibility.parent">
+        <h4 class="title">Parent</h4>
+        <h5 class="subtitle">{{history.compatibility.parent}}</h5>
+      </div>
+
+      <!-- <h4 class="title" *ngFor="let cmd of history.compatibility.container_config.Cmd">{{cmd}}</h4> -->
     </div>
   </div>
 </div>
