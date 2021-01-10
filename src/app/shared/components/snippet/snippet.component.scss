@@ -1,0 +1,32 @@
+@import "../../../../styles/variables";
+
+.snippet-container {
+  padding: 6px 12px;
+  border-radius: 8px;
+
+  background-color: $white;
+  box-shadow: 0 0 10px $gray-transparent;
+}
+
+.snippet-text {
+  font-size: 12px;
+  color: $secondary;
+  letter-spacing: 4px;
+}
+
+.icon-container {
+  color: $secondary;
+  margin: 4px 2px 0 16px;
+
+  transition: 0.2s;
+
+  &:hover {
+    color: $primary;
+    cursor: pointer;
+  }
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+}

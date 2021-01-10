@@ -9,9 +9,10 @@ import {LoaderComponent} from './loader/loader.component';
 import {TabsComponent} from './tabs/tabs.component';
 import {TextInputComponent} from './text-input/text-input.component';
 import {PaginationComponent} from './pagination/pagination.component';
+import {SnippetComponent} from './snippet/snippet.component';
 
 const COMPONENTS = [
-  CardComponent, ButtonComponent, LoaderComponent, TabsComponent, TextInputComponent, PaginationComponent
+  CardComponent, ButtonComponent, LoaderComponent, TabsComponent, TextInputComponent, PaginationComponent, SnippetComponent
 ];
 
 @NgModule({

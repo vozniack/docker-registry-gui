@@ -1,13 +1,7 @@
 <div class="bar-container" fxLayoutAlign="space-between center" [@fadeInAnimation]>
-  <div fxLayoutAlign="start center">
-    <i-feather class="icon return-icon" name="arrow-left-circle" (click)="returnToRepositories()"></i-feather>
-    <h2 class="spacing-title secondary">{{repository}}</h2>
-  </div>
+  <h2 class="spacing-title bar-title secondary">{{repository}}</h2>
 
-  <div fxLayoutAlign="end center" *ngIf="cmd" [@fadeInAnimation]>
-    <h5 class="spacing-title secondary">{{cmd}}</h5>
-    <i-feather class="icon copy-icon" name="copy"></i-feather>
-  </div>
+  <app-snippet [text]="cmd"></app-snippet>
 </div>
 
 <div fxLayout="row" *ngIf="tags">

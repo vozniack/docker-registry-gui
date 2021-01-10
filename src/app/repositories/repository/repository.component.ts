@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 import {fadeInAnimation} from '../../shared/animations/fadeInAnimation';
 import {Tags} from '../../core/model/tags';
 import {RepositoriesService} from '../repositories.service';
@@ -24,7 +24,7 @@ export class RepositoryComponent implements OnInit {
 
   loading = false;
 
-  constructor(private activatedRouter: ActivatedRoute, private router: Router, private repositoriesService: RepositoriesService) {
+  constructor(private activatedRouter: ActivatedRoute, private repositoriesService: RepositoriesService) {
   }
 
   ngOnInit(): void {
@@ -69,9 +69,5 @@ export class RepositoryComponent implements OnInit {
     this.getManifest();
 
     this.cmd = 'docker pull ' + environment.registryUrl + '/' + this.repository + ':' + this.active;
-  }
-
-  returnToRepositories(): void {
-    this.router.navigate(['/repositories']).then();
   }
 }

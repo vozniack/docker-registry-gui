@@ -1,0 +1,7 @@
+<div class="snippet-container" fxLayoutAlign="baseline center" *ngIf="text" [@fadeInAnimation]>
+  <h5 class="snippet-text">{{text}}</h5>
+
+  <div class="icon-container" (click)="copyToClipboard()">
+    <i-feather class="icon" name="copy"></i-feather>
+  </div>
+</div>
