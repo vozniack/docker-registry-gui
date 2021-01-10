@@ -1,5 +1,5 @@
-<div class="card-container" [class.route-card]="action === 'emit'" [class.active-card]="active" (click)="emit()"
-     [@fadeInAnimation]>
+<div class="card-container size-{{size}}" [class.route-card]="action === 'emit'" [class.active-card]="active"
+     (click)="emit()" [@fadeInAnimation]>
   <div fxLayout="row" fxLayoutAlign="space-between center">
     <div fxLayout="row" fxLayoutAlign="baseline center">
       <i-feather *ngIf="iconLeft" name="{{iconLeft}}" class="icon"></i-feather>

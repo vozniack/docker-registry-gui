@@ -20,6 +20,9 @@ export class CardComponent {
   description: string = undefined;
 
   @Input()
+  size = 'normal';
+
+  @Input()
   iconLeft = undefined;
 
   @Input()

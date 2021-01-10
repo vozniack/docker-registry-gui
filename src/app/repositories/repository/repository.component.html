@@ -5,7 +5,7 @@
 </div>
 
 <div fxLayout="row" *ngIf="tags">
-  <app-card *ngFor="let tag of tags.tags" [title]="tag" [iconLeft]="'tag'" [action]="'emit'"
+  <app-card *ngFor="let tag of tags.tags" [title]="tag" [iconLeft]="'tag'" [action]="'emit'" [size]="'small'"
             [active]="tag === active" (emitter)="setActive($event)">
   </app-card>
 </div>

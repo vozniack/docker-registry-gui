@@ -1,6 +1,6 @@
 @import "../../../../styles/variables";
 
-/* Card */
+/* Type */
 
 .route-card {
   transition: 0.2s;
@@ -15,8 +15,29 @@
   box-shadow: 0 0 4px $secondary;
 }
 
+/* Size */
+
+.size-small {
+  padding: 8px 12px;
+
+  .icon {
+    width: 22px;
+    margin: 6px 12px 0 4px;
+  }
+}
+
+.size-normal {
+  padding: 16px 24px;
+
+  .icon {
+    margin-right: 24px;
+  }
+}
+
+/* Text */
+
 .title {
-  color: $gray-dark;
+  color: $secondary;
   padding: 4px 0 2px 0;
 }
 
@@ -27,5 +48,4 @@
 
 .icon {
   color: $gray;
-  margin-right: 24px;
 }
