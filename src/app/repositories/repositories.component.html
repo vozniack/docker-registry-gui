@@ -2,14 +2,16 @@
   <h2 class="spacing-title secondary">Your repositories</h2>
 </div>
 
-<app-card *ngFor="let repository of repositories"
-          [title]="repository"
-          [subtitle]="'Local docker image'"
-          [iconLeft]="'box'"
-          [iconRight]="'arrow-right-circle'"
-          [action]="'route'"
-          [route]="'repositories/' + repository"
-          [routeText]="'Show details'">
-</app-card>
+<app-loader *ngIf="loading" [marginTop]="256" [description]="'Loading repositories...'"></app-loader>
 
-
+<div *ngIf="!loading">
+  <app-card *ngFor="let repository of repositories"
+            [title]="repository"
+            [subtitle]="'Local docker image'"
+            [iconLeft]="'box'"
+            [iconRight]="'arrow-right-circle'"
+            [action]="'route'"
+            [route]="'repositories/' + repository"
+            [routeText]="'Show details'">
+  </app-card>
+</div>

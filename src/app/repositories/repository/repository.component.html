@@ -8,5 +8,5 @@
   </app-card>
 </div>
 
-<app-manifest *ngIf="manifest" [manifest]="manifest"></app-manifest>
-
+<app-loader *ngIf="loading" [description]="!tags ? 'Loading tags...' : 'Loading manifest...'"></app-loader>
+<app-manifest *ngIf="!loading && manifest" [manifest]="manifest"></app-manifest>

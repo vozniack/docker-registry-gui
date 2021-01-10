@@ -20,6 +20,8 @@ export class RepositoryComponent implements OnInit {
   tags: Tags;
   manifest: Manifest;
 
+  loading = false;
+
   constructor(private activatedRouter: ActivatedRoute, private repositoriesService: RepositoriesService) {
   }
 
@@ -30,6 +32,8 @@ export class RepositoryComponent implements OnInit {
   }
 
   getTags(): void {
+    this.loading = true;
+
     this.repositoriesService.getTags(this.repository).subscribe(response => {
       this.tags = response;
 
@@ -43,6 +47,7 @@ export class RepositoryComponent implements OnInit {
 
   getManifest(): void {
     if (this.active) {
+      this.loading = true;
       this.manifest = undefined;
 
       this.repositoriesService.getManifest(this.repository, this.active).subscribe(response => {
@@ -51,6 +56,8 @@ export class RepositoryComponent implements OnInit {
         this.manifest.history.forEach(history => {
           history.compatibility = JSON.parse(history.v1Compatibility);
         });
+
+        this.loading = false;
       });
     }
   }
