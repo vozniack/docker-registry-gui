@@ -1,15 +1,9 @@
 @import "../../../../../styles/variables";
 
-.title {
-  color: $gray-dark;
-  padding: 4px 0 2px 0;
+.header-row {
+  margin-bottom: 24px;
 }
 
 .subtitle {
-  color: $gray;
-  padding: 2px 0 4px 0;
-}
-
-.date {
-  margin-bottom: 24px;
+  margin: 24px 0;
 }

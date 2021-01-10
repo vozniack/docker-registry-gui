@@ -4,17 +4,26 @@
     <i-feather class="secondary" name="info"></i-feather>
   </div>
 
-    <div fxLayout="row">
-      <div fxFlex="33">
-        <app-card [title]="'Schema version'" [description]="manifest.schemaVersion"></app-card>
-      </div>
-
-      <div fxFlex="34">
-        <app-card [title]="'Architecture'" [description]="manifest.architecture"></app-card>
-      </div>
-
-      <div fxFlex="33">
-        <app-card [title]="'Tag'" [description]="manifest.tag"></app-card>
-      </div>
+  <div fxLayout="row">
+    <div class="card-container" fxLayoutAlign="space-between center" fxFlex="16">
+      <h4 class="gray-dark">Schema version</h4>
+      <h5 class="gray">{{manifest.schemaVersion}}</h5>
     </div>
+
+    <div class="card-container" fxLayoutAlign="space-between center" fxFlex="16">
+      <h4 class="gray-dark">Architecture</h4>
+      <h5 class="gray">{{manifest.architecture}}</h5>
+    </div>
+
+    <div class="card-container" fxLayoutAlign="space-between center" fxFlex="16">
+      <h4 class="gray-dark">Tag</h4>
+      <h5 class="gray">{{manifest.tag}}</h5>
+    </div>
+
+    <div class="card-container" fxLayoutAlign="space-between center" fxFlex="52">
+      <h4 class="gray-dark">Digest</h4>
+      <h5 class="gray">{{manifest.digest}}</h5>
+    </div>
+
+  </div>
 </div>

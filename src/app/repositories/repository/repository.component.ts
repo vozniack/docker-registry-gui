@@ -52,7 +52,8 @@ export class RepositoryComponent implements OnInit {
       this.manifest = undefined;
 
       this.repositoriesService.getManifest(this.repository, this.active).subscribe(response => {
-        this.manifest = response;
+        this.manifest = response.body;
+        this.manifest.digest = response.headers.get('Docker-Content-Digest');
 
         this.manifest.history.forEach(history => {
           history.compatibility = JSON.parse(history.v1Compatibility);

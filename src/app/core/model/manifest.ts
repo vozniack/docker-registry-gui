@@ -17,4 +17,6 @@ export interface Manifest {
   history: History[];
 
   fsLayers: FsLayer[];
+
+  digest: string;
 }

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {fadeInAnimation} from '../../../shared/animations/fadeInAnimation';
 
 @Component({
@@ -7,24 +7,20 @@ import {fadeInAnimation} from '../../../shared/animations/fadeInAnimation';
   styleUrls: ['./navbar.component.scss'],
   animations: [fadeInAnimation]
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
 
   routes = [
     {
       name: 'Dashboard',
       route: '',
-      icon: 'home'
+      icon: 'home',
+      exact: true
     },
     {
       name: 'Repositories',
       route: 'repositories',
-      icon: 'server'
+      icon: 'server',
+      exact: false
     }
   ];
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

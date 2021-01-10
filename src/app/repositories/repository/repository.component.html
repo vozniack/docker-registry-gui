@@ -4,7 +4,6 @@
     <h5 class="spacing-title secondary">{{cmd}}</h5>
     <i-feather class="copy-icon" name="copy"></i-feather>
   </div>
-
 </div>
 
 <div fxLayout="row" *ngIf="tags">
@@ -13,5 +12,8 @@
   </app-card>
 </div>
 
-<app-loader *ngIf="loading" [description]="!tags ? 'Loading tags...' : 'Loading manifest...'"></app-loader>
+<app-loader *ngIf="loading" [description]="!tags ? 'Loading tags...' : 'Loading manifest...'"
+            [marginTop]="!tags ? 256 : 172">
+</app-loader>
+
 <app-manifest *ngIf="!loading && manifest" [manifest]="manifest"></app-manifest>

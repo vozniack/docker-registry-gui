@@ -1,4 +1,6 @@
 import {ContainerConfig} from './containerConfig';
+import {Config} from './config';
+import {Container} from './container';
 
 export interface Compatibility {
 
@@ -6,7 +8,13 @@ export interface Compatibility {
 
   parent: string;
 
-  created: string;
+  created: Date;
+
+  architecture: string;
+
+  config: Config;
+
+  container: Container;
 
   // tslint:disable-next-line:variable-name
   container_config: ContainerConfig;

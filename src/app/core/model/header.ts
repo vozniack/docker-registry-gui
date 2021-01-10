@@ -1,4 +1,4 @@
-import {Jwk} from "./jwk";
+import {Jwk} from './jwk';
 
 export interface Header {
 

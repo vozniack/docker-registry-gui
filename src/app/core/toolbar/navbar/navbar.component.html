@@ -1,6 +1,6 @@
 <ul>
   <li *ngFor="let route of routes">
-    <a [routerLink]="route.route" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
+    <a [routerLink]="route.route" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: route.exact }">
       <i-feather name="{{route.icon}}" class="icon"></i-feather>
       {{route.name}}
     </a>

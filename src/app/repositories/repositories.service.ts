@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpResponse} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {Observable} from 'rxjs';
 import {Catalog} from '../core/model/catalog';
@@ -22,7 +22,7 @@ export class RepositoriesService {
     return this.httpClient.get<Tags>(environment.apiUrl + 'v2/' + repository + '/tags/list');
   }
 
-  getManifest(repository: string, tag: string): Observable<Manifest> {
-    return this.httpClient.get<Manifest>(environment.apiUrl + 'v2/' + repository + '/manifests/' + tag);
+  getManifest(repository: string, tag: string): Observable<HttpResponse<Manifest>> {
+    return this.httpClient.get<Manifest>(environment.apiUrl + 'v2/' + repository + '/manifests/' + tag, {observe: 'response'});
   }
 }

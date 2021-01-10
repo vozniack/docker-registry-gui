@@ -1,4 +1,5 @@
 <div *ngIf="manifest" [@fadeInAnimation]>
+
   <div class="bar-container" fxLayout="row" fxLayoutAlign="space-between center">
     <h3 class="spacing-title secondary">History</h3>
     <i-feather class="secondary" name="book"></i-feather>
@@ -6,17 +7,30 @@
 
   <div fxLayout="column">
     <div class="card-container" *ngFor="let history of manifest.history">
-      <div fxLayoutAlign="space-between end" class="date">
-        <h4 class="title">{{history.compatibility.id}}</h4>
-        <h4 class="subtitle">{{history.compatibility.created | date: 'full'}}</h4>
+      <div fxLayoutAlign="space-between end" class="header-row">
+        <h4 class="gray-dark">{{history.compatibility.id}}</h4>
+        <h4 class="gray">{{history.compatibility.created | date:'dd.MM.yyyy HH:mm:ss'}}</h4>
       </div>
 
       <div fxLayoutAlign="space-between center" *ngIf="history.compatibility.parent">
-        <h4 class="title">Parent</h4>
-        <h5 class="subtitle">{{history.compatibility.parent}}</h5>
+        <h4 class="gray-dark">Parent</h4>
+        <h5 class="gray">{{history.compatibility.parent}}</h5>
       </div>
 
-      <!-- <h4 class="title" *ngFor="let cmd of history.compatibility.container_config.Cmd">{{cmd}}</h4> -->
+      <div fxLayoutAlign="space-between center" *ngIf="history.compatibility.architecture">
+        <h4 class="gray-dark">Architecture</h4>
+        <h5 class="gray">{{history.compatibility.architecture}}</h5>
+      </div>
+
+      <div *ngIf="history.compatibility.container_config">
+        <h3 class="gray-dark subtitle">Commands</h3>
+      </div>
+
+      <div  *ngIf="history.compatibility.container_config">
+        <h4 class="gray" *ngFor="let cmd of history.compatibility.container_config.Cmd">{{cmd}}</h4>
+      </div>
+
     </div>
   </div>
+
 </div>
