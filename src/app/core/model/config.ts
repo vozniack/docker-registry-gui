@@ -6,7 +6,9 @@ export interface Config {
 
   User: string;
 
-  AttachStdin: boolean;
+  Image: string;
 
-  AttachStdout: boolean;
+  Env: string[];
+
+  Cmd: string[];
 }

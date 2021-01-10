@@ -6,31 +6,31 @@
   </div>
 
   <div fxLayout="column">
-    <div class="card-container" *ngFor="let history of manifest.history">
-      <div fxLayoutAlign="space-between end" class="header-row">
-        <h4 class="gray-dark">{{history.compatibility.id}}</h4>
-        <h4 class="gray">{{history.compatibility.created | date:'dd.MM.yyyy HH:mm:ss'}}</h4>
+    <div class="card-container" *ngFor="let history of manifest.history; index as index">
+
+      <div class="header-row">
+        <div fxLayoutAlign="space-between center" class="header-row">
+          <h4 class="gray-dark">{{history.compatibility.id}}</h4>
+          <h4 class="gray">{{history.compatibility.created | date:'dd.MM.yyyy HH:mm:ss'}}</h4>
+        </div>
+
+        <div fxLayoutAlign="space-between center" *ngIf="history.compatibility.container">
+          <h4 class="gray-dark">Container</h4>
+          <h4 class="gray">{{history.compatibility.container}}</h4>
+        </div>
+
+        <div fxLayoutAlign="space-between center" *ngIf="history.compatibility.docker_version">
+          <h4 class="gray-dark">Docker version</h4>
+          <h4 class="gray">{{history.compatibility.docker_version}}</h4>
+        </div>
       </div>
 
-      <div fxLayoutAlign="space-between center" *ngIf="history.compatibility.parent">
-        <h4 class="gray-dark">Parent</h4>
-        <h5 class="gray">{{history.compatibility.parent}}</h5>
-      </div>
+      <app-manifest-history-config [config]="history.compatibility.config" [name]="'Config'">
+      </app-manifest-history-config>
 
-      <div fxLayoutAlign="space-between center" *ngIf="history.compatibility.architecture">
-        <h4 class="gray-dark">Architecture</h4>
-        <h5 class="gray">{{history.compatibility.architecture}}</h5>
-      </div>
-
-      <div *ngIf="history.compatibility.container_config">
-        <h3 class="gray-dark subtitle">Commands</h3>
-      </div>
-
-      <div  *ngIf="history.compatibility.container_config">
-        <h4 class="gray" *ngFor="let cmd of history.compatibility.container_config.Cmd">{{cmd}}</h4>
-      </div>
+      <app-manifest-history-config [config]="history.compatibility.container_config" [name]="'Container config'">
+      </app-manifest-history-config>
 
     </div>
   </div>
-
 </div>

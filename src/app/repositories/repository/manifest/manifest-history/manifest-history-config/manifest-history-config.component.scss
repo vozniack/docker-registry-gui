@@ -1,0 +1,45 @@
+@import "../../../../../../styles/variables";
+
+.subtitle {
+  margin: 8px 0;
+}
+
+.arrow {
+  transition: 0.2s;
+  padding: 6px;
+  border-radius: 50%;
+
+  color: $secondary;
+  border: 1px solid $secondary;
+
+  &:hover {
+    cursor: pointer;
+
+    color: $primary;
+    border-color: $primary;
+  }
+
+  &.active {
+    transform: rotate(180deg);
+  }
+}
+
+.config-container {
+  padding-left: 24px;
+  margin: 8px 0 16px 0;
+  border-left: 4px solid $primary;
+}
+
+.container-expanded {
+  max-height: 512px;
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+}
+
+.container-hidden {
+  max-height: 0;
+}
+
+.section-container {
+  padding: 8px 0;
+}
