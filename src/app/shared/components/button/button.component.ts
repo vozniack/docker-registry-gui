@@ -18,6 +18,9 @@ export class ButtonComponent {
   size = '';
 
   @Input()
+  height = 'auto';
+
+  @Input()
   active = false;
 
   @Input()
@@ -37,5 +40,4 @@ export class ButtonComponent {
       this.router.navigate([this.route]).then();
     }
   }
-
 }

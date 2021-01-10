@@ -7,6 +7,7 @@ import {RepositoriesModule} from './repositories/repositories.module';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ToolbarModule} from './core/toolbar/toolbar.module';
+import {ReturnToTopModule} from './core/return-to-top/return-to-top.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {ToolbarModule} from './core/toolbar/toolbar.module';
     BrowserAnimationsModule,
     ToolbarModule,
     DashboardModule,
-    RepositoriesModule
+    RepositoriesModule,
+    ReturnToTopModule
   ],
   providers: [],
   bootstrap: [AppComponent]

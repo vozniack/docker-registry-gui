@@ -1,0 +1,13 @@
+.scroll-to-top-button {
+  position: fixed;
+
+  bottom: 24px;
+  right: 24px;
+
+  opacity: 0;
+  transition: 0.2s ease-in-out;
+}
+
+.button-visible {
+  opacity: 1;
+}
