@@ -1,6 +1,6 @@
 import {ContainerConfig} from './containerConfig';
 
-export class Compatibility {
+export interface Compatibility {
 
   id: string;
 

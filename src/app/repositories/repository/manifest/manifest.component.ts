@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {Manifest} from '../../../core/model/manifest';
 import {fadeInAnimation} from '../../../shared/animations/fadeInAnimation';
 
@@ -8,14 +8,35 @@ import {fadeInAnimation} from '../../../shared/animations/fadeInAnimation';
   styleUrls: ['./manifest.component.scss'],
   animations: [fadeInAnimation]
 })
-export class ManifestComponent implements OnInit {
+export class ManifestComponent {
 
   @Input()
   manifest: Manifest;
 
-  constructor() { }
+  tabs = [
+    {
+      code: 'basic-information',
+      name: 'Basic information',
+      icon: 'info',
+      active: true
+    },
+    {
+      code: 'history',
+      name: 'History',
+      icon: 'book',
+      active: false
+    },
+    {
+      code: 'layers',
+      name: 'Layers',
+      icon: 'layers',
+      active: false
+    }
+  ];
 
-  ngOnInit(): void {
+  activeTab = 'basic-information';
+
+  setActive(name: string): void {
+    this.activeTab = name;
   }
-
 }

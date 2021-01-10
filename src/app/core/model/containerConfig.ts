@@ -1,4 +1,4 @@
-export class ContainerConfig {
+export interface ContainerConfig {
 
   Cmd: string[];
 }

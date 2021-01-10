@@ -1,0 +1,41 @@
+@import "../../../../styles/variables";
+
+.tab-container {
+  padding: 16px 24px 0 24px;
+}
+
+.tab {
+
+  span {
+    padding: 2px 24px 14px 24px;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: bold;
+
+    color: $secondary;
+
+    transition: 0.2s;
+
+    border-bottom: 2px solid $white;
+
+    &.active {
+      color: $primary;
+      border-color: $primary;
+    }
+
+    .icon {
+      width: 22px;
+      margin-right: 16px;
+      padding-top: 4px;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    span {
+      color: $primary;
+    }
+  }
+}

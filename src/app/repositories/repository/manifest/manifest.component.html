@@ -1,4 +1,13 @@
-<app-manifest-basic-information [manifest]="manifest"></app-manifest-basic-information>
-<app-manifest-signatures [manifest]="manifest"></app-manifest-signatures>
-<app-manifest-history [manifest]="manifest"></app-manifest-history>
-<app-manifest-layers [manifest]="manifest"></app-manifest-layers>
+<app-tabs [tabs]="tabs" (active)="setActive($event)"></app-tabs>
+
+<app-manifest-basic-information [manifest]="manifest" *ngIf="activeTab === 'basic-information'">
+</app-manifest-basic-information>
+
+<app-manifest-signatures [manifest]="manifest" *ngIf="activeTab === 'basic-information'">
+</app-manifest-signatures>
+
+<app-manifest-history [manifest]="manifest" *ngIf="activeTab === 'history'">
+</app-manifest-history>
+
+<app-manifest-layers [manifest]="manifest" *ngIf="activeTab === 'layers'">
+</app-manifest-layers>
