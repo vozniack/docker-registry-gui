@@ -1,9 +1,12 @@
 <div class="toolbar-container" fxLayout="row" fxLayoutAlign="space-between center" [@fadeInAnimation]>
   <div fxLayout="row">
     <i-feather name="package" class="icon"></i-feather>
-    <h1 class="title white">Docker registry</h1>
+    <div fxLayout="column">
+      <h1 class="title">Docker registry</h1>
+      <h5 class="subtitle spacing-title">{{registryUrl}}</h5>
+    </div>
+
   </div>
 
   <app-navbar></app-navbar>
-
 </div>

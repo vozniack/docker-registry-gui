@@ -1,5 +1,10 @@
-<div class="bar-container" [@fadeInAnimation]>
+<div class="bar-container" fxLayoutAlign="space-between center" [@fadeInAnimation]>
   <h2 class="spacing-title secondary">{{repository}}</h2>
+  <div fxLayoutAlign="end center" *ngIf="cmd" [@fadeInAnimation]>
+    <h5 class="spacing-title secondary">{{cmd}}</h5>
+    <i-feather class="copy-icon" name="copy"></i-feather>
+  </div>
+
 </div>
 
 <div fxLayout="row" *ngIf="tags">

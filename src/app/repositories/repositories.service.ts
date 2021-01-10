@@ -15,14 +15,14 @@ export class RepositoriesService {
   }
 
   getCatalog(): Observable<Catalog> {
-    return this.httpClient.get<Catalog>(environment.registryUrl + 'v2/_catalog');
+    return this.httpClient.get<Catalog>(environment.apiUrl + 'v2/_catalog');
   }
 
   getTags(repository: string): Observable<Tags> {
-    return this.httpClient.get<Tags>(environment.registryUrl + 'v2/' + repository + '/tags/list');
+    return this.httpClient.get<Tags>(environment.apiUrl + 'v2/' + repository + '/tags/list');
   }
 
   getManifest(repository: string, tag: string): Observable<Manifest> {
-    return this.httpClient.get<Manifest>(environment.registryUrl + 'v2/' + repository + '/manifests/' + tag);
+    return this.httpClient.get<Manifest>(environment.apiUrl + 'v2/' + repository + '/manifests/' + tag);
   }
 }

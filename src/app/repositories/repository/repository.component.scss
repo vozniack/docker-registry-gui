@@ -1,0 +1,15 @@
+@import "src/styles/variables";
+
+.copy-icon {
+  color: $secondary;
+
+  width: 24px;
+  margin: -4px 0 0 12px;
+
+  transition: 0.2s;
+
+  &:hover {
+    color: $primary;
+    cursor: pointer;
+  }
+}

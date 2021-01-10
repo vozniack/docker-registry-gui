@@ -8,16 +8,23 @@
   transition: 0.2s;
 
   .icon {
-    margin: 10px 32px 0 12px;
+    margin: 16px 32px 0 12px;
     color: $white;
     transform: scale(1.75);
     transition: 0.2s;
   }
 
   .title {
+    color: $white;
     font-size: 32px;
     font-weight: 800;
     letter-spacing: 2px;
     transition: 0.2s;
+  }
+
+  .subtitle {
+    color: $white;
+    margin-left: 2px;
+    font-size: 8px;
   }
 }

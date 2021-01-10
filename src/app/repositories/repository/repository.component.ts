@@ -4,6 +4,7 @@ import {fadeInAnimation} from '../../shared/animations/fadeInAnimation';
 import {Tags} from '../../core/model/tags';
 import {RepositoriesService} from '../repositories.service';
 import {Manifest} from '../../core/model/manifest';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-repository',
@@ -13,9 +14,10 @@ import {Manifest} from '../../core/model/manifest';
 })
 export class RepositoryComponent implements OnInit {
 
-  repository = 'Repository';
-
   active: string = undefined;
+
+  repository = 'Repository';
+  cmd: string = undefined;
 
   tags: Tags;
   manifest: Manifest;
@@ -38,8 +40,7 @@ export class RepositoryComponent implements OnInit {
       this.tags = response;
 
       if (this.tags.tags.length > 0) {
-        this.active = this.tags.tags[0];
-
+        this.setActive(this.tags.tags[0]);
         this.getManifest();
       }
     });
@@ -65,5 +66,7 @@ export class RepositoryComponent implements OnInit {
   setActive(tag: string): void {
     this.active = tag;
     this.getManifest();
+
+    this.cmd = 'docker pull ' + environment.registryUrl + '/' + this.repository + ':' + this.active;
   }
 }
