@@ -44,12 +44,27 @@
   }
 }
 
+.secondary {
+  background-color: $secondary;
+  border: 2px solid $secondary;
+  color: $white;
+
+  &:hover {
+    background-color: $white;
+    color: $secondary;
+  }
+}
+
 .text {
-  margin: -2px 12px 0 0;
+  margin-top: -2px;
 }
 
 .icon {
   transform: scale(0.8);
+
+  &.margin {
+    margin-left: 12px;
+  }
 }
 
 /* Shape */
@@ -65,6 +80,8 @@
 /* Size */
 
 .small {
+  height: 32px;
+
   padding: 4px 8px;
   font-size: 13px;
 

@@ -1,0 +1,44 @@
+@import "../../../../styles/variables";
+
+input {
+  font-family: Lato, monospace;
+
+  background-color: $white;
+  color: $gray-dark;
+  padding: 8px 16px;
+
+  margin: 4px 12px;
+
+  border-radius: 8px;
+  box-shadow: 0 0 10px $gray-transparent;
+
+  transition: 0.2s ease-in-out;
+
+  border: none;
+  outline: none;
+
+  height: 16px;
+
+  &:active, &:focus {
+    box-shadow: 0 0 4px $primary;
+
+    ~ .icon {
+      color: $primary;
+    }
+  }
+
+  ::placeholder {
+    color: $gray;
+    opacity: 1;
+  }
+}
+
+.icon {
+  color: $gray-transparent;
+
+  position: absolute;
+  margin: 10px 0 0 -46px;
+  width: 20px;
+
+  transition: 0.2s ease-in-out;
+}

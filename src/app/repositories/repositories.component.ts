@@ -10,8 +10,15 @@ import {fadeInAnimation} from '../shared/animations/fadeInAnimation';
 })
 export class RepositoriesComponent implements OnInit {
 
+  copy: string[] = [];
+  filtered: string [] = [];
   repositories: string[] = [];
+
   loading = false;
+
+  currentPage = 1;
+  pageSize = 7;
+  pagesAmount = 1;
 
   constructor(private repositoriesService: RepositoriesService) {
   }
@@ -20,8 +27,22 @@ export class RepositoriesComponent implements OnInit {
     this.loading = true;
 
     this.repositoriesService.getCatalog().subscribe(catalog => {
-      this.repositories = catalog.repositories;
+      this.copy = catalog.repositories;
+      this.filter('');
+
       this.loading = false;
     });
+  }
+
+  filter(name: string): void {
+    this.filtered = this.copy.filter(repository => repository.startsWith(name));
+    this.paginate(this.currentPage);
+  }
+
+  paginate(currentPage: number): void {
+    this.currentPage = currentPage;
+    this.pagesAmount = Math.ceil(this.filtered.length / this.pageSize);
+
+    this.repositories = this.filtered.slice((this.currentPage - 1) * this.pageSize, this.currentPage * this.pageSize);
   }
 }

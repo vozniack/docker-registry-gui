@@ -18,7 +18,10 @@ export class ButtonComponent {
   size = '';
 
   @Input()
-  text = undefined;
+  active = false;
+
+  @Input()
+  text: string = undefined;
 
   @Input()
   icon: string = undefined;

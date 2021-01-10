@@ -5,6 +5,7 @@ import {
   Server,
   Box,
   ArrowRightCircle,
+  ArrowLeftCircle,
   Tag,
   Info,
   Key,
@@ -12,7 +13,12 @@ import {
   Book,
   Layers,
   Copy,
-  ChevronsDown
+  ChevronsDown,
+  ChevronsLeft,
+  ChevronLeft,
+  ChevronsRight,
+  ChevronRight,
+  Search
 } from 'angular-feather/icons';
 import {FeatherModule} from 'angular-feather';
 
@@ -22,6 +28,7 @@ const icons = {
   Home,
   Server,
   ArrowRightCircle,
+  ArrowLeftCircle,
   Tag,
   Info,
   Key,
@@ -29,7 +36,12 @@ const icons = {
   Book,
   Layers,
   Copy,
-  ChevronsDown
+  ChevronsDown,
+  ChevronsLeft,
+  ChevronLeft,
+  ChevronsRight,
+  ChevronRight,
+  Search
 };
 
 @NgModule({

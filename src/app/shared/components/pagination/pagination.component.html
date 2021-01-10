@@ -1,0 +1,30 @@
+<div class="pagination-container" fxLayout="row" fxLayoutAlign="end center" [@fadeInAnimation]>
+
+  <!-- static previous pages buttons -->
+
+  <app-button class="pagination-button" [icon]="'chevrons-left'" [size]="'small'" (click)="firstPage()">
+  </app-button>
+
+  <app-button class="pagination-button" [icon]="'chevron-left'" [size]="'small'" (click)="prevPage()">
+  </app-button>
+
+  <!-- dynamic page buttons -->
+
+  <div *ngFor="let p of pages" fxLayout="row" fxLayoutAlign="end center">
+    <app-button *ngIf="this.canShowPage(p)" class="pagination-button" [active]="p === page" [text]="p.toString()"
+                (click)="this.changePage(p)">
+    </app-button>
+  </div>
+
+  <!-- static next pages buttons -->
+
+  <app-button class="pagination-button" [icon]="'chevron-right'" [size]="'small'" (click)="nextPage()">
+  </app-button>
+
+  <app-button class="pagination-button" [icon]="'chevrons-right'" [size]="'small'" (click)="lastPage()">
+  </app-button>
+
+</div>
+
+
+

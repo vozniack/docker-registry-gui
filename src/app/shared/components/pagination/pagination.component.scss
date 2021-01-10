@@ -1,0 +1,13 @@
+@import "../../../../styles/variables";
+
+.pagination-container {
+  padding: 4px 12px;
+}
+
+.pagination-button {
+  margin-left: 12px;
+
+  &.active {
+    background-color: $secondary;
+  }
+}
