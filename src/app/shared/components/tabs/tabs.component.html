@@ -1,10 +1,21 @@
-<div class="card-container tab-container" fxLayout="row">
-  <div class="tab" *ngFor="let tab of tabs" (click)="this.activate(tab)">
+<div class="card-container tab-container" fxLayout="row" fxLayoutAlign="space-between center">
 
-    <span [class.active]="tab.active" fxLayoutAlign="baseline center">
-      <i-feather name="{{tab.icon}}" class="icon"></i-feather>
-      {{tab.name}}
-    </span>
-
+  <div fxLayout="row">
+    <div class="tab" *ngFor="let tab of tabs" (click)="this.activate(tab)">
+      <span [class.active]="tab.active" fxLayoutAlign="baseline center">
+        <i-feather name="{{tab.icon}}" class="icon"></i-feather>
+          {{tab.name}}
+      </span>
+    </div>
   </div>
+
+  <div fxLayout="row">
+    <div *ngFor="let action of actions">
+      <div class="action {{action.style}}" fxLayoutAlign="center center" (click)="action.call()">
+        <i-feather name="{{action.icon}}" class="icon"></i-feather>
+        <span>{{action.name}}</span>
+      </div>
+    </div>
+  </div>
+
 </div>

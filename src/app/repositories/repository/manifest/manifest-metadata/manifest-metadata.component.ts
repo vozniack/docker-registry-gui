@@ -3,12 +3,12 @@ import {fadeInAnimation} from '../../../../shared/animations/fadeInAnimation';
 import {Manifest} from '../../../../core/model/manifest';
 
 @Component({
-  selector: 'app-manifest-basic-information',
-  templateUrl: './manifest-basic-information.component.html',
-  styleUrls: ['./manifest-basic-information.component.scss'],
+  selector: 'app-manifest-metadata',
+  templateUrl: './manifest-metadata.component.html',
+  styleUrls: ['./manifest-metadata.component.scss'],
   animations: [fadeInAnimation]
 })
-export class ManifestBasicInformationComponent {
+export class ManifestMetadataComponent {
 
   @Input()
   manifest: Manifest;

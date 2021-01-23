@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Tab} from './tab';
+import {Action} from './action';
 
 @Component({
   selector: 'app-tabs',
@@ -10,6 +11,9 @@ export class TabsComponent {
 
   @Input()
   tabs: Tab[];
+
+  @Input()
+  actions: Action[];
 
   @Output()
   active = new EventEmitter<string>();

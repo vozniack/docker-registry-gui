@@ -1,16 +1,22 @@
-<app-tabs [tabs]="tabs" (active)="setActive($event)"></app-tabs>
+<app-tabs [tabs]="tabs" [actions]="actions" (active)="setActive($event)"></app-tabs>
 
-<app-manifest-basic-information [manifest]="manifest" *ngIf="activeTab === 'basic-information'">
-</app-manifest-basic-information>
+<div class="manifest-container" fxLayout="column" fxLayoutAlign="center center">
 
-<app-manifest-signatures [manifest]="manifest" *ngIf="activeTab === 'basic-information'">
-</app-manifest-signatures>
+  <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="24px" fxFill>
+    <app-manifest-metadata [manifest]="manifest" *ngIf="activeTab === 'basic-information'" fxFlex="25">
+    </app-manifest-metadata>
 
-<app-manifest-header [manifest]="manifest" *ngIf="activeTab === 'basic-information'">
-</app-manifest-header>
+    <app-manifest-signatures [manifest]="manifest" *ngIf="activeTab === 'basic-information'" fxFlex="75">
+    </app-manifest-signatures>
+  </div>
 
-<app-manifest-history [manifest]="manifest" *ngIf="activeTab === 'history'">
-</app-manifest-history>
+  <app-manifest-header [manifest]="manifest" *ngIf="activeTab === 'basic-information'" fxFill>
+  </app-manifest-header>
 
-<app-manifest-layers [manifest]="manifest" *ngIf="activeTab === 'layers'">
-</app-manifest-layers>
+  <app-manifest-history [manifest]="manifest" *ngIf="activeTab === 'history'" fxFill>
+  </app-manifest-history>
+
+  <app-manifest-layers [manifest]="manifest" *ngIf="activeTab === 'layers'" fxFill>
+  </app-manifest-layers>
+</div>
+

@@ -19,7 +19,8 @@ import {
   ChevronLeft,
   ChevronsRight,
   ChevronRight,
-  Search
+  Search,
+  Trash
 } from 'angular-feather/icons';
 import {FeatherModule} from 'angular-feather';
 
@@ -43,7 +44,8 @@ const icons = {
   ChevronLeft,
   ChevronsRight,
   ChevronRight,
-  Search
+  Search,
+  Trash
 };
 
 @NgModule({
