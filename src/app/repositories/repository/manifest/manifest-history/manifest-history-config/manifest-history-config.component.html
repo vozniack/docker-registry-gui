@@ -1,6 +1,7 @@
 <div class="config-container" *ngIf="config">
+
   <div fxLayoutAlign="space-between center">
-    <h3 class="secondary subtitle">{{name}}</h3>
+    <h3 class="secondary subtitle-margin">{{name}}</h3>
     <i-feather class="secondary arrow" [class.active]="expanded" name="chevrons-down"
                (click)="expand()">
     </i-feather>
@@ -9,34 +10,35 @@
   <div class="container-expanded" [class.container-hidden]="!expanded">
 
     <div class="section-container" fxLayoutAlign="space-between center" *ngIf="config.Image">
-      <h4 class="secondary">Image</h4>
-      <h5 class="gray">{{config.Image}}</h5>
+      <h4 class="title">Image</h4>
+      <h5 class="subtitle">{{config.Image}}</h5>
     </div>
 
     <div class="section-container" fxLayoutAlign="space-between center" *ngIf="config.Hostname">
-      <h4 class="secondary">Hostname</h4>
-      <h5 class="gray">{{config.Hostname}}</h5>
+      <h4 class="title">Hostname</h4>
+      <h5 class="subtitle">{{config.Hostname}}</h5>
     </div>
 
     <div class="section-container" fxLayoutAlign="space-between center" *ngIf="config.Domainname">
-      <h4 class="secondary">Domain name</h4>
-      <h5 class="gray">{{config.Domainname}}</h5>
+      <h4 class="title">Domain name</h4>
+      <h5 class="subtitle">{{config.Domainname}}</h5>
     </div>
 
     <div class="section-container" fxLayoutAlign="space-between center" *ngIf="config.User">
-      <h4 class="secondary">User</h4>
-      <h5 class="gray">{{config.User}}</h5>
+      <h4 class="title">User</h4>
+      <h5 class="subtitle">{{config.User}}</h5>
     </div>
 
-    <h4 class="secondary subtitle" *ngIf="config.Env">Env</h4>
+    <h4 class="secondary subtitle-margin" *ngIf="config.Env">Env</h4>
     <div *ngIf="config.Env">
-      <h4 class="gray" *ngFor="let env of config.Env">{{env}}</h4>
+      <h4 class="subtitle" *ngFor="let env of config.Env">{{env}}</h4>
     </div>
 
-    <h4 class="secondary subtitle" *ngIf="config.Cmd">Commands</h4>
+    <h4 class="secondary subtitle-margin" *ngIf="config.Cmd">Commands</h4>
     <div *ngIf="config.Cmd">
-      <h4 class="gray" *ngFor="let cmd of config.Cmd">{{cmd}}</h4>
+      <h4 class="subtitle" *ngFor="let cmd of config.Cmd">{{cmd}}</h4>
     </div>
 
   </div>
+
 </div>

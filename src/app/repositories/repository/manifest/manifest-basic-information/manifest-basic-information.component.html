@@ -1,29 +1,25 @@
 <div *ngIf="manifest" [@fadeInAnimation]>
+
   <div class="bar-container" fxLayout="row" fxLayoutAlign="space-between center">
     <h3 class="spacing-title secondary">Basic information</h3>
     <i-feather class="secondary" name="info"></i-feather>
   </div>
 
-  <div fxLayout="row">
-    <div class="card-container" fxLayoutAlign="space-between center" fxFlex="16">
-      <h4 class="secondary">Schema version</h4>
-      <h5 class="gray">{{manifest.schemaVersion}}</h5>
+  <div class="card-container" fxLayout="column">
+    <div fxLayoutAlign="space-between center" >
+      <h4 class="title">Schema version</h4>
+      <h5 class="subtitle">{{manifest.schemaVersion}}</h5>
     </div>
 
-    <div class="card-container" fxLayoutAlign="space-between center" fxFlex="16">
-      <h4 class="secondary">Architecture</h4>
-      <h5 class="gray">{{manifest.architecture}}</h5>
+    <div fxLayoutAlign="space-between center">
+      <h4 class="title">Architecture</h4>
+      <h5 class="subtitle">{{manifest.architecture}}</h5>
     </div>
 
-    <div class="card-container" fxLayoutAlign="space-between center" fxFlex="16">
-      <h4 class="secondary">Tag</h4>
-      <h5 class="gray">{{manifest.tag}}</h5>
+    <div fxLayoutAlign="space-between center">
+      <h4 class="title">Tag</h4>
+      <h5 class="subtitle">{{manifest.tag}}</h5>
     </div>
-
-    <div class="card-container" fxLayoutAlign="space-between center" fxFlex="52">
-      <h4 class="secondary">Digest</h4>
-      <h5 class="gray">{{manifest.digest}}</h5>
-    </div>
-
   </div>
+
 </div>

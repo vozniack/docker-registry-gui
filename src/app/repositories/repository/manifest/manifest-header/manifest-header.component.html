@@ -1,0 +1,44 @@
+<div *ngIf="manifest" [@fadeInAnimation]>
+
+  <div *ngFor="let signature of manifest.signatures">
+
+    <div class="bar-container" fxLayout="row" fxLayoutAlign="space-between center">
+      <h3 class="spacing-title secondary">Header</h3>
+      <i-feather class="secondary" name="lock"></i-feather>
+    </div>
+
+    <div class="card-container">
+      <div fxLayoutAlign="space-between center">
+        <h4 class="title">Algorithm</h4>
+        <h5 class="subtitle">{{signature.header.alg}}</h5>
+      </div>
+
+      <div fxLayoutAlign="space-between center">
+        <h4 class="title">CRV</h4>
+        <h5 class="subtitle">{{signature.header.jwk.crv}}</h5>
+      </div>
+
+      <div fxLayoutAlign="space-between center">
+        <h4 class="title">KID</h4>
+        <h5 class="subtitle">{{signature.header.jwk.kid}}</h5>
+      </div>
+
+      <div fxLayoutAlign="space-between center">
+        <h4 class="title">KTY</h4>
+        <h5 class="subtitle">{{signature.header.jwk.kty}}</h5>
+      </div>
+
+      <div fxLayoutAlign="space-between center">
+        <h4 class="title">x</h4>
+        <h5 class="subtitle">{{signature.header.jwk.x}}</h5>
+      </div>
+
+      <div fxLayoutAlign="space-between center">
+        <h4 class="title">y</h4>
+        <h5 class="subtitle">{{signature.header.jwk.y}}</h5>
+      </div>
+    </div>
+
+  </div>
+
+</div>

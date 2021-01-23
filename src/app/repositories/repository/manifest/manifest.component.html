@@ -6,6 +6,9 @@
 <app-manifest-signatures [manifest]="manifest" *ngIf="activeTab === 'basic-information'">
 </app-manifest-signatures>
 
+<app-manifest-header [manifest]="manifest" *ngIf="activeTab === 'basic-information'">
+</app-manifest-header>
+
 <app-manifest-history [manifest]="manifest" *ngIf="activeTab === 'history'">
 </app-manifest-history>
 

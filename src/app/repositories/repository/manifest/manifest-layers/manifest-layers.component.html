@@ -1,4 +1,5 @@
 <div *ngIf="manifest" [@fadeInAnimation]>
+
   <div class="bar-container" fxLayout="row" fxLayoutAlign="space-between center">
     <h3 class="spacing-title secondary">Layers</h3>
     <i-feather class="secondary" name="layers"></i-feather>
@@ -6,8 +7,9 @@
 
   <div fxLayout="column">
     <div class="card-container" *ngFor="let layer of manifest.fsLayers" fxLayoutAlign="space-between center">
-      <h4 class="secondary">Blob sum</h4>
-      <h5 class="gray">{{layer.blobSum}}</h5>
+      <h4 class="title">Blob sum</h4>
+      <h5 class="subtitle">{{layer.blobSum}}</h5>
     </div>
   </div>
+
 </div>

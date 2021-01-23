@@ -12,6 +12,7 @@ import {ManifestSignaturesComponent} from './repository/manifest/manifest-signat
 import {ManifestHistoryComponent} from './repository/manifest/manifest-history/manifest-history.component';
 import {ManifestLayersComponent} from './repository/manifest/manifest-layers/manifest-layers.component';
 import {ManifestHistoryConfigComponent} from './repository/manifest/manifest-history/manifest-history-config/manifest-history-config.component';
+import { ManifestHeaderComponent } from './repository/manifest/manifest-header/manifest-header.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import {ManifestHistoryConfigComponent} from './repository/manifest/manifest-his
     ManifestHistoryComponent,
     ManifestLayersComponent,
     ManifestHistoryConfigComponent,
+    ManifestHeaderComponent,
   ],
   imports: [
     CommonModule,

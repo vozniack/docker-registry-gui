@@ -10,18 +10,18 @@
 
       <div class="header-row">
         <div fxLayoutAlign="space-between center" class="header-row">
-          <h4 class="secondary">{{history.compatibility.id}}</h4>
-          <h4 class="gray">{{history.compatibility.created | date:'dd.MM.yyyy HH:mm:ss'}}</h4>
+          <h4 class="title">{{history.compatibility.id}}</h4>
+          <h4 class="subtitle">{{history.compatibility.created | date:'dd.MM.yyyy HH:mm:ss'}}</h4>
         </div>
 
         <div fxLayoutAlign="space-between center" *ngIf="history.compatibility.container">
-          <h4 class="secondary">Container</h4>
-          <h4 class="gray">{{history.compatibility.container}}</h4>
+          <h4 class="title">Container</h4>
+          <h4 class="subtitle">{{history.compatibility.container}}</h4>
         </div>
 
         <div fxLayoutAlign="space-between center" *ngIf="history.compatibility.docker_version">
-          <h4 class="secondary">Docker version</h4>
-          <h4 class="gray">{{history.compatibility.docker_version}}</h4>
+          <h4 class="title">Docker version</h4>
+          <h4 class="subtitle">{{history.compatibility.docker_version}}</h4>
         </div>
       </div>
 
@@ -33,4 +33,5 @@
 
     </div>
   </div>
+
 </div>
