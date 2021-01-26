@@ -1,6 +1,6 @@
 <div class="card-container size-{{size}}" [class.active-card]="active"
      [class.action-card]="action === CardAction.EMIT || action === CardAction.CLICK"
-     (click)="emit()" [@fadeInAnimation]>
+     (click)="emit()" [@fadeInAnimation] [tooltip]="tooltip">
   <div fxLayout="row" fxLayoutAlign="space-between center">
     <div fxLayout="row" fxLayoutAlign="baseline center">
       <i-feather *ngIf="iconLeft" name="{{iconLeft}}" class="icon" [class.alone]="!title"></i-feather>

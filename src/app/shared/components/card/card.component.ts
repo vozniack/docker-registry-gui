@@ -19,6 +19,9 @@ export class CardComponent {
   subtitle: string = undefined;
 
   @Input()
+  tooltip: string = undefined;
+
+  @Input()
   description: string = undefined;
 
   @Input()

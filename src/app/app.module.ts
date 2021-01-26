@@ -8,6 +8,8 @@ import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ToolbarModule} from './core/toolbar/toolbar.module';
 import {ReturnToTopModule} from './core/return-to-top/return-to-top.module';
+import {TooltipModule} from './shared/directives/tooltip/tooltip.module';
+import {OverlayModule} from '@angular/cdk/overlay';
 
 @NgModule({
   declarations: [
@@ -21,10 +23,13 @@ import {ReturnToTopModule} from './core/return-to-top/return-to-top.module';
     ToolbarModule,
     DashboardModule,
     RepositoriesModule,
-    ReturnToTopModule
+    ReturnToTopModule,
+    OverlayModule,
+    TooltipModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
 })
 export class AppModule {
 }

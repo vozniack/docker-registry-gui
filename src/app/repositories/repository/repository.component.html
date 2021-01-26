@@ -9,9 +9,11 @@
     </app-card>
   </div>
   <div fxLayout="row">
-    <app-card [iconLeft]="'copy'" [size]="CardSize.SMALL" [action]="CardAction.CLICK" (click)="copyToClipboard()">
+    <app-card [iconLeft]="'copy'" [size]="CardSize.SMALL" [action]="CardAction.CLICK" [tooltip]="'Copy to clipboard'"
+              (click)="copyToClipboard()">
     </app-card>
-    <app-card [iconLeft]="'trash'" [size]="CardSize.SMALL" [action]="CardAction.CLICK" (click)="deleteManifest()">
+    <app-card [iconLeft]="'trash'" [size]="CardSize.SMALL" [action]="CardAction.CLICK" [tooltip]="'Delete manifest'"
+              (click)="deleteManifest()">
     </app-card>
   </div>
 </div>
