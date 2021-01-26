@@ -2,10 +2,18 @@
   <h2 class="spacing-title bar-title secondary">{{repository}}</h2>
 </div>
 
-<div fxLayout="row" *ngIf="tags">
-  <app-card *ngFor="let tag of tags.tags" [title]="tag" [iconLeft]="'tag'" [action]="'emit'" [size]="'small'"
-            [active]="tag === active" (emitter)="setActive($event)">
-  </app-card>
+<div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="tags">
+  <div fxLayout="row">
+    <app-card *ngFor="let tag of tags.tags" [title]="tag" [iconLeft]="'tag'" [action]="CardAction.EMIT"
+              [size]="CardSize.SMALL" [active]="tag === active" (emitter)="setActive($event)">
+    </app-card>
+  </div>
+  <div fxLayout="row">
+    <app-card [iconLeft]="'copy'" [size]="CardSize.SMALL" [action]="CardAction.CLICK" (click)="copyToClipboard()">
+    </app-card>
+    <app-card [iconLeft]="'trash'" [size]="CardSize.SMALL" [action]="CardAction.CLICK" (click)="deleteManifest()">
+    </app-card>
+  </div>
 </div>
 
 <app-loader *ngIf="loading" [description]="!tags ? 'Loading tags...' : 'Loading manifest...'"

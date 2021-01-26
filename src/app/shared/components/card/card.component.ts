@@ -1,6 +1,8 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {fadeInAnimation} from '../../animations/fadeInAnimation';
 import {Router} from '@angular/router';
+import {CardAction} from './type/card-action';
+import {CardSize} from './type/card-size';
 
 @Component({
   selector: 'app-card',
@@ -20,7 +22,7 @@ export class CardComponent {
   description: string = undefined;
 
   @Input()
-  size = 'normal';
+  size = CardSize.NORMAL;
 
   @Input()
   iconLeft = undefined;
@@ -35,13 +37,18 @@ export class CardComponent {
   routeText: string = undefined;
 
   @Input()
-  action = 'none';
+  action: CardAction = CardAction.NONE;
 
   @Input()
   active = false;
 
+  @Input()
+  disabled = false;
+
   @Output()
   emitter = new EventEmitter<string>();
+
+  CardAction = CardAction;
 
   constructor(private router: Router) {
   }
@@ -51,7 +58,7 @@ export class CardComponent {
   }
 
   emit(): void {
-    if (this.action === 'emit') {
+    if (this.action === CardAction.EMIT) {
       this.emitter.emit(this.title);
     }
   }

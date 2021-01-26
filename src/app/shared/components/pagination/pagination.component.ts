@@ -1,5 +1,6 @@
 import {Component, Input, Output, EventEmitter, OnChanges} from '@angular/core';
 import {fadeInAnimation} from '../../animations/fadeInAnimation';
+import {CardSize} from '../card/type/card-size';
 
 @Component({
   selector: 'app-pagination',
@@ -23,6 +24,8 @@ export class PaginationComponent implements OnChanges {
 
   page = 1;
   pages: number[] = [];
+
+  CardSize = CardSize;
 
   ngOnChanges(): void {
     this.countPages();

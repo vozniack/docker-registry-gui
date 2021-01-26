@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {RepositoriesService} from './repositories.service';
+import {RepositoryService} from './repository.service';
 import {fadeInAnimation} from '../shared/animations/fadeInAnimation';
+import {CardAction} from '../shared/components/card/type/card-action';
 
 @Component({
   selector: 'app-repositories',
@@ -20,13 +21,15 @@ export class RepositoriesComponent implements OnInit {
   pageSize = 7;
   pagesAmount = 1;
 
-  constructor(private repositoriesService: RepositoriesService) {
+  CardAction = CardAction;
+
+  constructor(private repositoryService: RepositoryService) {
   }
 
   ngOnInit(): void {
     this.loading = true;
 
-    this.repositoriesService.getCatalog().subscribe(catalog => {
+    this.repositoryService.getCatalog().subscribe(catalog => {
       this.copy = catalog.repositories;
       this.filter('');
 

@@ -2,12 +2,20 @@
 
 /* Type */
 
-.route-card {
+.action-card {
   transition: 0.2s;
 
   &:hover {
     box-shadow: 0 0 4px $primary;
     cursor: pointer;
+
+    .title {
+      color: $primary;
+    }
+
+    .icon {
+      color: $primary;
+    }
   }
 }
 
@@ -23,6 +31,10 @@
   .icon {
     width: 22px;
     margin: 6px 12px 0 4px;
+
+    &.alone {
+      margin: 6px;
+    }
   }
 }
 
@@ -38,14 +50,17 @@
 
 .title {
   color: $secondary;
+  transition: 0.2s;
   padding: 4px 0 2px 0;
 }
 
 .subtitle {
   color: $gray;
+  transition: 0.2s;
   padding: 2px 0 4px 0;
 }
 
 .icon {
   color: $gray;
+  transition: 0.2s;
 }

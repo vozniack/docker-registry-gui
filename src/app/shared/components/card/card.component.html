@@ -1,8 +1,9 @@
-<div class="card-container size-{{size}}" [class.route-card]="action === 'emit'" [class.active-card]="active"
+<div class="card-container size-{{size}}" [class.active-card]="active"
+     [class.action-card]="action === CardAction.EMIT || action === CardAction.CLICK"
      (click)="emit()" [@fadeInAnimation]>
   <div fxLayout="row" fxLayoutAlign="space-between center">
     <div fxLayout="row" fxLayoutAlign="baseline center">
-      <i-feather *ngIf="iconLeft" name="{{iconLeft}}" class="icon"></i-feather>
+      <i-feather *ngIf="iconLeft" name="{{iconLeft}}" class="icon" [class.alone]="!title"></i-feather>
       <div fxLayout="column" fxLayoutAlign="start start">
         <h3 class="title" *ngIf="title">{{title}}</h3>
         <h5 class="subtitle" *ngIf="subtitle">{{subtitle}}</h5>
@@ -10,9 +11,9 @@
     </div>
 
     <div fxLayout="row" fxLayoutAlign="baseline center">
-      <app-button *ngIf="this.action === 'route'" [route]="route" [text]="routeText" [icon]="iconRight">
+      <app-button *ngIf="this.action === CardAction.ROUTE" [route]="route" [text]="routeText" [icon]="iconRight">
       </app-button>
-      <h5 class="subtitle" *ngIf="description && action === 'none'">{{description}}</h5>
+      <h5 class="subtitle" *ngIf="description && action === CardAction.NONE">{{description}}</h5>
     </div>
 
   </div>

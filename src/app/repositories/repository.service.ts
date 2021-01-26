@@ -9,20 +9,26 @@ import {Manifest} from '../core/model/manifest';
 @Injectable({
   providedIn: 'root'
 })
-export class RepositoriesService {
+export class RepositoryService {
+
+  apiUrl = environment.apiUrl + 'v2';
 
   constructor(private httpClient: HttpClient) {
   }
 
   getCatalog(): Observable<Catalog> {
-    return this.httpClient.get<Catalog>(environment.apiUrl + 'v2/_catalog');
+    return this.httpClient.get<Catalog>(`${this.apiUrl}/_catalog`);
   }
 
   getTags(repository: string): Observable<Tags> {
-    return this.httpClient.get<Tags>(environment.apiUrl + 'v2/' + repository + '/tags/list');
+    return this.httpClient.get<Tags>(`${this.apiUrl}/${repository}/tags/list`);
   }
 
   getManifest(repository: string, tag: string): Observable<HttpResponse<Manifest>> {
-    return this.httpClient.get<Manifest>(environment.apiUrl + 'v2/' + repository + '/manifests/' + tag, {observe: 'response'});
+    return this.httpClient.get<Manifest>(`${this.apiUrl}/${repository}/manifests/${tag}`, {observe: 'response'});
+  }
+
+  deleteManifest(repository: string, tag: string): Observable<HttpResponse<any>> {
+    return this.httpClient.delete<any>(`${this.apiUrl}/${repository}/manifests/${tag}`, {observe: 'response'});
   }
 }
