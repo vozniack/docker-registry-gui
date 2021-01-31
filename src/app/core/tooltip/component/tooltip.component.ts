@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {fadeInAnimation} from '../../../animations/fadeInAnimation';
+import {fadeInAnimation} from '../../../shared/animations/fadeInAnimation';
 
 @Component({
   selector: 'app-tooltip',

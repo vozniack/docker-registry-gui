@@ -2,9 +2,9 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpResponse} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {Observable} from 'rxjs';
-import {Catalog} from '../core/model/catalog';
-import {Tags} from '../core/model/tags';
-import {Manifest} from '../core/model/manifest';
+import {Catalog} from '../core/model/domain/v1/catalog';
+import {Tags} from '../core/model/domain/v1/tags';
+import {Manifest} from '../core/model/domain/v1/manifest';
 
 @Injectable({
   providedIn: 'root'

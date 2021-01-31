@@ -1,4 +1,4 @@
-import {FsLayer} from './fsLayer';
+import {FsLayer} from './fs-layer';
 import {Signatures} from './signatures';
 import {History} from './history';
 

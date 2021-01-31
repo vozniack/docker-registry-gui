@@ -1,0 +1,11 @@
+<div class="notification {{notification.type.toLowerCase()}}" [class.faded]="notification.faded"
+     fxLayout="row" fxLayoutAlign="space-between top" (click)="dismiss()" [@fadeInAnimation]>
+
+  <div fxLayout="column" fxLayoutGap="8px">
+    <span class="title {{notification.type.toLowerCase()}}">{{notification.title}}</span>
+    <span class="message">{{notification.message}}</span>
+  </div>
+
+  <i-feather class="close-icon {{notification.type.toLowerCase()}}" name="X"></i-feather>
+
+</div>

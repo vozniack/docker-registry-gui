@@ -1,0 +1,5 @@
+<div class="notifications-wrapper" fxLayout="column" fxLayoutGap="24px">
+  <aside *ngFor="let notification of notifications">
+    <app-notification [notification]="notification" (dismissed)="dismiss($event)"></app-notification>
+  </aside>
+</div>

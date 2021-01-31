@@ -1,12 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {fadeInAnimation} from '../../shared/animations/fadeInAnimation';
-import {Tags} from '../../core/model/tags';
+import {Tags} from '../../core/model/domain/v1/tags';
 import {RepositoryService} from '../repository.service';
-import {Manifest} from '../../core/model/manifest';
+import {Manifest} from '../../core/model/domain/v1/manifest';
 import {environment} from '../../../environments/environment';
 import {CardAction} from '../../shared/components/card/type/card-action';
 import {CardSize} from '../../shared/components/card/type/card-size';
+import {NotificationsService} from '../../core/notifications/notifications.service';
 
 @Component({
   selector: 'app-repository',
@@ -29,7 +30,9 @@ export class RepositoryComponent implements OnInit {
   CardSize = CardSize;
   CardAction = CardAction;
 
-  constructor(private activatedRouter: ActivatedRoute, private repositoryService: RepositoryService) {
+  constructor(private activatedRouter: ActivatedRoute,
+              private repositoryService: RepositoryService,
+              private notificationsService: NotificationsService) {
   }
 
   ngOnInit(): void {
@@ -45,7 +48,6 @@ export class RepositoryComponent implements OnInit {
 
       if (this.tags.tags.length > 0) {
         this.setActive(this.tags.tags[0]);
-        this.getManifest();
       }
     });
   }
@@ -57,27 +59,23 @@ export class RepositoryComponent implements OnInit {
 
       this.repositoryService.getManifest(this.repository, this.active).subscribe(response => {
         this.manifest = response.body;
-        this.manifest.digest = response.headers.get('Docker-Content-Digest');
 
         this.manifest.history.forEach(history => {
           history.compatibility = JSON.parse(history.v1Compatibility);
         });
 
         this.loading = false;
+      }, error => {
+        if (error.status === 400) {
+          this.loading = false;
+          this.notificationsService.error('Unknown manifest - the repository has been probably deleted.');
+        }
       });
     }
   }
 
   deleteManifest(): void {
-    if (this.active && this.manifest) {
-      this.repositoryService.deleteManifest(this.repository, this.manifest.digest).subscribe(response => {
-        console.log('Success!');
-      }, error => {
-        if (error.status === 405) {
-          console.log('Method not allowed');
-        }
-      });
-    }
+    this.notificationsService.error('Deletion has been temporarily disabled.');
   }
 
   copyToClipboard(): void {
@@ -95,6 +93,8 @@ export class RepositoryComponent implements OnInit {
 
     document.execCommand('copy');
     document.body.removeChild(tmp);
+
+    this.notificationsService.success('Docker pull command have been copied to clipboard.');
   }
 
   setActive(tag: string): void {

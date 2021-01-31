@@ -8,7 +8,7 @@
               [size]="CardSize.SMALL" [active]="tag === active" (emitter)="setActive($event)">
     </app-card>
   </div>
-  <div fxLayout="row">
+  <div fxLayout="row" *ngIf="manifest" [@fadeInAnimation]>
     <app-card [iconLeft]="'copy'" [size]="CardSize.SMALL" [action]="CardAction.CLICK" [tooltip]="'Copy to clipboard'"
               (click)="copyToClipboard()">
     </app-card>

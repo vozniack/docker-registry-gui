@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {Config} from '../../../../../core/model/config';
+import {Config} from '../../../../../core/model/domain/v1/config';
 
 @Component({
   selector: 'app-manifest-history-config',

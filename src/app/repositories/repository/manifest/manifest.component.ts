@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {Manifest} from '../../../core/model/manifest';
+import {Manifest} from '../../../core/model/domain/v1/manifest';
 import {fadeInAnimation} from '../../../shared/animations/fadeInAnimation';
 import {Tab} from '../../../shared/components/tabs/tab';
 
