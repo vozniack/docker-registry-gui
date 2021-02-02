@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {RepositoryService} from './repository.service';
 import {fadeInAnimation} from '../shared/animations/fadeInAnimation';
 import {CardAction} from '../core/types/card-action';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-repositories',
@@ -23,17 +24,21 @@ export class RepositoriesComponent implements OnInit {
 
   CardAction = CardAction;
 
-  constructor(private repositoryService: RepositoryService) {
+  constructor(private repositoryService: RepositoryService, private router: Router) {
   }
 
   ngOnInit(): void {
     this.loading = true;
 
-    this.repositoryService.getCatalog().subscribe(catalog => {
-      this.copy = catalog.repositories;
+    this.repositoryService.getCatalog().subscribe(response => {
+      this.copy = response.body.repositories;
       this.filter('');
 
       this.loading = false;
+    }, error => {
+      if (error.status === 504) {
+        this.router.navigate(['error'], {state: {code: error.status, message: error.statusText}}).then();
+      }
     });
   }
 

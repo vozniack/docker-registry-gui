@@ -16,8 +16,8 @@ export class RepositoryService {
   constructor(private httpClient: HttpClient) {
   }
 
-  getCatalog(): Observable<Catalog> {
-    return this.httpClient.get<Catalog>(`${this.apiUrl}/_catalog`);
+  getCatalog(): Observable<HttpResponse<Catalog>> {
+    return this.httpClient.get<Catalog>(`${this.apiUrl}/_catalog`, {observe: 'response'});
   }
 
   getTags(repository: string): Observable<Tags> {

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {fadeInAnimation} from '../shared/animations/fadeInAnimation';
 
 @Component({
@@ -7,12 +7,6 @@ import {fadeInAnimation} from '../shared/animations/fadeInAnimation';
   styleUrls: ['./dashboard.component.scss'],
   animations: [fadeInAnimation]
 })
-export class DashboardComponent implements OnInit {
-
-  constructor() {
-  }
-
-  ngOnInit(): void {
-  }
+export class DashboardComponent {
 
 }

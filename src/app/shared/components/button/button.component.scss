@@ -36,6 +36,17 @@
   }
 }
 
+.secondary {
+  background-color: $secondary;
+  border: 2px solid $secondary;
+  color: $white;
+
+  &:hover {
+    background-color: $white;
+    color: $secondary;
+  }
+}
+
 .disabled {
   background-color: $gray;
   border: 2px solid $gray;

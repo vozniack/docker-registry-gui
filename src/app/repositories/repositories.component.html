@@ -5,7 +5,7 @@
 <app-loader *ngIf="loading" [marginTop]="256" [description]="'Loading repositories...'"></app-loader>
 
 <div *ngIf="!loading">
-  <div fxLayoutAlign="space-between center">
+  <div fxLayoutAlign="space-between center" *ngIf="repositories && repositories.length > 0">
     <app-text-input [width]="256" [placeholder]="'Search repositories...'" [icon]="'search'" (output)="filter($event)">
     </app-text-input>
 
@@ -21,4 +21,10 @@
             [route]="'repositories/' + repository"
             [routeText]="'Show details'">
   </app-card>
+
+  <div class="empty-container" *ngIf="repositories.length < 1" [@fadeInAnimation]
+       fxLayout="row" fxLayoutAlign="center top" fxLayoutGap="32px">
+    <i-feather class="icon primary" name="alert-octagon"></i-feather>
+    <h2 class="spacing-title primary">No repositories</h2>
+  </div>
 </div>
