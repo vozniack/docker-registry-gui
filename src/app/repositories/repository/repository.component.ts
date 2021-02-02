@@ -71,14 +71,14 @@ export class RepositoryComponent implements OnInit {
       }, error => {
         if (error.status === 400) {
           this.loading = false;
-          this.notificationsService.error('Unknown manifest - the repository has been probably deleted.');
+          this.notificationsService.error('Unknown manifest - the repository has been probably deleted');
         }
       });
     }
   }
 
   deleteManifest(): void {
-    this.notificationsService.error('Deletion has been temporarily disabled.');
+    this.notificationsService.error('Deletion has been temporarily disabled');
   }
 
   copyToClipboard(): void {
@@ -97,7 +97,7 @@ export class RepositoryComponent implements OnInit {
     document.execCommand('copy');
     document.body.removeChild(tmp);
 
-    this.notificationsService.success('Docker pull command have been copied to clipboard.');
+    this.notificationsService.success('Docker pull command have been copied to clipboard');
   }
 
   setActive(tag: string): void {

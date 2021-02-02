@@ -18,6 +18,7 @@ export class NotificationComponent implements OnInit {
 
   ngOnInit(): void {
     setTimeout(() => this.notification.faded = false, 1);
+    setTimeout(() => this.dismiss(), 3000);
   }
 
   dismiss(): void {

@@ -18,17 +18,21 @@ export class NotificationsComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.notificationsSubscription = this.notificationService.onNotification().subscribe(notification => {
-      this.notifications.push(notification);
-
-      if (this.notifications.length > 5) {
-        this.notifications[this.notifications.length - 1].faded = true;
-        setTimeout(() => this.notifications.pop(), 150);
-      }
+      this.add(notification);
     });
   }
 
   ngOnDestroy(): void {
     this.notificationsSubscription.unsubscribe();
+  }
+
+  add(notification: Notification): void {
+    this.notifications.push(notification);
+
+    if (this.notifications.length > 1) {
+      this.notifications[0].faded = true;
+      setTimeout(() => this.notifications.splice(0, 1), 150);
+    }
   }
 
   dismiss(notification: Notification): void {
