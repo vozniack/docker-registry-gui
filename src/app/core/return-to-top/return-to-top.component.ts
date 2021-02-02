@@ -1,5 +1,6 @@
 import {Component, HostListener, Inject} from '@angular/core';
 import {DOCUMENT} from '@angular/common';
+import {Shape} from '../types/shape';
 
 @Component({
   selector: 'app-return-to-top',
@@ -9,6 +10,7 @@ import {DOCUMENT} from '@angular/common';
 export class ReturnToTopComponent {
 
   scrolled: boolean;
+  Shape = Shape;
 
   constructor(@Inject(DOCUMENT) private document: Document) {
   }

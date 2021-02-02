@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {RepositoryService} from './repository.service';
 import {fadeInAnimation} from '../shared/animations/fadeInAnimation';
-import {CardAction} from '../shared/components/card/type/card-action';
+import {CardAction} from '../core/types/card-action';
 
 @Component({
   selector: 'app-repositories',

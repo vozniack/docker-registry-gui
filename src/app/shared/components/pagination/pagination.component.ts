@@ -1,6 +1,6 @@
 import {Component, Input, Output, EventEmitter, OnChanges} from '@angular/core';
 import {fadeInAnimation} from '../../animations/fadeInAnimation';
-import {CardSize} from '../card/type/card-size';
+import {CardSize} from '../../../core/types/card-size';
 
 @Component({
   selector: 'app-pagination',

@@ -1,8 +1,8 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {fadeInAnimation} from '../../animations/fadeInAnimation';
 import {Router} from '@angular/router';
-import {CardAction} from './type/card-action';
-import {CardSize} from './type/card-size';
+import {CardAction} from '../../../core/types/card-action';
+import {CardSize} from '../../../core/types/card-size';
 
 @Component({
   selector: 'app-card',

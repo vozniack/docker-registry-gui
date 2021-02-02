@@ -1,5 +1,8 @@
 import {Component, Input} from '@angular/core';
 import {Router} from '@angular/router';
+import {Style} from '../../../core/types/style';
+import {Shape} from '../../../core/types/shape';
+import {CardSize} from '../../../core/types/card-size';
 
 @Component({
   selector: 'app-button',
@@ -9,13 +12,13 @@ import {Router} from '@angular/router';
 export class ButtonComponent {
 
   @Input()
-  style = 'primary';
+  style = Style.PRIMARY;
 
   @Input()
-  shape = 'rect';
+  shape =  Shape.RECTANGLE;
 
   @Input()
-  size = '';
+  size = CardSize.NORMAL;
 
   @Input()
   height = 'auto';

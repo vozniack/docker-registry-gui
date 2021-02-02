@@ -5,9 +5,10 @@ import {Tags} from '../../core/model/domain/v1/tags';
 import {RepositoryService} from '../repository.service';
 import {Manifest} from '../../core/model/domain/v1/manifest';
 import {environment} from '../../../environments/environment';
-import {CardAction} from '../../shared/components/card/type/card-action';
-import {CardSize} from '../../shared/components/card/type/card-size';
+import {CardAction} from '../../core/types/card-action';
+import {CardSize} from '../../core/types/card-size';
 import {NotificationsService} from '../../core/notifications/notifications.service';
+import {Style} from '../../core/types/style';
 
 @Component({
   selector: 'app-repository',
@@ -29,6 +30,7 @@ export class RepositoryComponent implements OnInit {
 
   CardSize = CardSize;
   CardAction = CardAction;
+  Style = Style;
 
   constructor(private activatedRouter: ActivatedRoute,
               private repositoryService: RepositoryService,
