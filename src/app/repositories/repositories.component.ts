@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {RepositoryService} from './repository.service';
 import {fadeInAnimation} from '../shared/animations/fadeInAnimation';
 import {CardAction} from '../core/types/card-action';
-import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-repositories',
@@ -24,7 +23,7 @@ export class RepositoriesComponent implements OnInit {
 
   CardAction = CardAction;
 
-  constructor(private repositoryService: RepositoryService, private router: Router) {
+  constructor(private repositoryService: RepositoryService) {
   }
 
   ngOnInit(): void {
@@ -35,10 +34,6 @@ export class RepositoriesComponent implements OnInit {
       this.filter('');
 
       this.loading = false;
-    }, error => {
-      if (error.status === 504) {
-        this.router.navigate(['error'], {state: {code: error.status, message: error.statusText}}).then();
-      }
     });
   }
 

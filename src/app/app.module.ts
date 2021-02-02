@@ -5,7 +5,7 @@ import {AppComponent} from './app.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {ErrorComponent} from './error/error.component';
 import {RepositoriesModule} from './repositories/repositories.module';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ToolbarModule} from './core/toolbar/toolbar.module';
 import {ReturnToTopModule} from './core/return-to-top/return-to-top.module';
@@ -15,6 +15,7 @@ import {NotificationsModule} from './core/notifications/notifications.module';
 import {ComponentsModule} from './shared/components/components.module';
 import {FlexModule} from '@angular/flex-layout';
 import {IconsModule} from './core/icons/icons.module';
+import {ErrorInterceptor} from './core/interceptor/error-interceptor';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,13 @@ import {IconsModule} from './core/icons/icons.module';
     FlexModule,
     IconsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent],
 
 })
