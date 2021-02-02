@@ -9,7 +9,7 @@
     <app-text-input [width]="256" [placeholder]="'Search repositories...'" [icon]="'search'" (output)="filter($event)">
     </app-text-input>
 
-    <app-pagination [pageSize]="5" [pagesAmount]="pagesAmount" (currentPage)="paginate($event)"></app-pagination>
+    <app-pagination [pageSize]="pageSize" [pagesAmount]="pagesAmount" (currentPage)="paginate($event)"></app-pagination>
   </div>
 
   <app-card *ngFor="let repository of repositories"

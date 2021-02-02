@@ -24,6 +24,9 @@ export class ButtonComponent {
   active = false;
 
   @Input()
+  disabled = false;
+
+  @Input()
   text: string = undefined;
 
   @Input()
@@ -36,7 +39,7 @@ export class ButtonComponent {
   }
 
   navigate(): void {
-    if (this.route) {
+    if (this.route && !this.disabled) {
       this.router.navigate([this.route]).then();
     }
   }

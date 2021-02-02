@@ -18,7 +18,7 @@ export class RepositoriesComponent implements OnInit {
   loading = false;
 
   currentPage = 1;
-  pageSize = 7;
+  pageSize = 6;
   pagesAmount = 1;
 
   CardAction = CardAction;

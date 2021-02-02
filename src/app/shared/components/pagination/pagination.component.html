@@ -2,10 +2,12 @@
 
   <!-- static previous pages buttons -->
 
-  <app-button class="pagination-button" [icon]="'chevrons-left'" [size]="CardSize.SMALL" (click)="firstPage()">
+  <app-button class="pagination-button" [icon]="'chevrons-left'" [size]="CardSize.SMALL" (click)="firstPage()"
+              [disabled]="pagesAmount < 3 || page === 1">
   </app-button>
 
-  <app-button class="pagination-button" [icon]="'chevron-left'" [size]="CardSize.SMALL" (click)="prevPage()">
+  <app-button class="pagination-button" [icon]="'chevron-left'" [size]="CardSize.SMALL" (click)="prevPage()"
+              [disabled]="page === 1">
   </app-button>
 
   <!-- dynamic page buttons -->
@@ -18,10 +20,12 @@
 
   <!-- static next pages buttons -->
 
-  <app-button class="pagination-button" [icon]="'chevron-right'" [size]="CardSize.SMALL" (click)="nextPage()">
+  <app-button class="pagination-button" [icon]="'chevron-right'" [size]="CardSize.SMALL" (click)="nextPage()"
+              [disabled]="page === pagesAmount">
   </app-button>
 
-  <app-button class="pagination-button" [icon]="'chevrons-right'" [size]="CardSize.SMALL" (click)="lastPage()">
+  <app-button class="pagination-button" [icon]="'chevrons-right'" [size]="CardSize.SMALL" (click)="lastPage()"
+              [disabled]="pagesAmount < 3 || page === pagesAmount">
   </app-button>
 
 </div>
