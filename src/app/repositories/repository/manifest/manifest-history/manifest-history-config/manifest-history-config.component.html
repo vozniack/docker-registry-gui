@@ -2,29 +2,31 @@
 
   <div fxLayoutAlign="space-between center">
     <h3 class="secondary subtitle-margin">{{name}}</h3>
-    <i-feather class="secondary arrow" [class.active]="expanded" name="chevrons-down"
-               (click)="expand()">
-    </i-feather>
+    <i-feather class="secondary arrow" [class.active]="expanded" name="chevron-down" (click)="expand()"></i-feather>
   </div>
 
   <div class="container-expanded" [class.container-hidden]="!expanded">
 
-    <div class="section-container" fxLayoutAlign="space-between center" *ngIf="config.Image">
+    <div class="section-container" *ngIf="config.Image" fxLayout="row" fxLayoutAlign="space-between center"
+         fxLayout.lt-md="column" fxLayoutAlign.lt-md="start start">
       <h4 class="title">Image</h4>
       <h5 class="subtitle">{{config.Image}}</h5>
     </div>
 
-    <div class="section-container" fxLayoutAlign="space-between center" *ngIf="config.Hostname">
+    <div class="section-container" *ngIf="config.Hostname" fxLayout="row" fxLayoutAlign="space-between center"
+         fxLayout.lt-md="column" fxLayoutAlign.lt-md="start start">
       <h4 class="title">Hostname</h4>
       <h5 class="subtitle">{{config.Hostname}}</h5>
     </div>
 
-    <div class="section-container" fxLayoutAlign="space-between center" *ngIf="config.Domainname">
+    <div class="section-container" *ngIf="config.Domainname" fxLayout="row" fxLayoutAlign="space-between center"
+         fxLayout.lt-md="column" fxLayoutAlign.lt-md="start start">
       <h4 class="title">Domain name</h4>
       <h5 class="subtitle">{{config.Domainname}}</h5>
     </div>
 
-    <div class="section-container" fxLayoutAlign="space-between center" *ngIf="config.User">
+    <div class="section-container" *ngIf="config.User" fxLayout="row" fxLayoutAlign="space-between center"
+         fxLayout.lt-md="column" fxLayoutAlign.lt-md="start start">
       <h4 class="title">User</h4>
       <h5 class="subtitle">{{config.User}}</h5>
     </div>

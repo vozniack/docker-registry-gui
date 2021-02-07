@@ -1,7 +1,7 @@
-<div class="card-container tab-container" fxLayout="row">
+<div class="card-container tab-container" fxLayout="row" fxLayout.lt-md="column">
 
   <div class="tab" *ngFor="let tab of tabs" (click)="this.activate(tab)">
-      <span [class.active]="tab.active" fxLayoutAlign="baseline center">
+      <span [class.active]="tab.active" fxLayoutAlign="start center" fxLayoutAlign.lt-md="center center">
         <i-feather name="{{tab.icon}}" class="icon"></i-feather>
         {{tab.name}}
       </span>

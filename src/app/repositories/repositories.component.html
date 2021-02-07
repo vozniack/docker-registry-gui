@@ -5,7 +5,8 @@
 <app-loader *ngIf="loading" [marginTop]="256" [description]="'Loading repositories...'"></app-loader>
 
 <div *ngIf="!loading">
-  <div fxLayoutAlign="space-between center">
+  <div fxLayout="row" fxLayoutAlign="space-between center"
+       fxLayout.lt-sm="column" fxLayoutAlign.lt-sm="center center">
     <app-text-input [width]="256" [placeholder]="'Search repositories...'" [icon]="'search'" (output)="filter($event)">
     </app-text-input>
 

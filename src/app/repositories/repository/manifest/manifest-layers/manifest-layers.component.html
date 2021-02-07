@@ -6,7 +6,8 @@
   </div>
 
   <div fxLayout="column">
-    <div class="card-container" *ngFor="let layer of manifest.fsLayers" fxLayoutAlign="space-between center">
+    <div class="card-container" *ngFor="let layer of manifest.fsLayers"
+         fxLayout="row" fxLayoutAlign="space-between center" fxLayout.lt-md="column" fxLayoutAlign.lt-md="start start">
       <h4 class="title">Blob sum</h4>
       <h5 class="subtitle">{{layer.blobSum}}</h5>
     </div>

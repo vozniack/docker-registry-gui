@@ -8,17 +8,20 @@
     </div>
 
     <div class="card-container">
-      <div fxLayoutAlign="space-between center">
+      <div class="signature-container" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px"
+           fxLayout.lt-md="column" fxLayoutAlign.lt-md="start start" fxLayoutGap.lt-md="0px">
         <h4 class="title">Digest</h4>
         <h5 class="subtitle">{{manifest.digest}}</h5>
       </div>
 
-      <div fxLayoutAlign="space-between center">
+      <div class="signature-container" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px"
+           fxLayout.lt-md="column" fxLayoutAlign.lt-md="start start" fxLayoutGap.lt-md="0px">
         <h4 class="title">Signature</h4>
         <h5 class="subtitle">{{signature.signature}}</h5>
       </div>
 
-      <div fxLayoutAlign="space-between center">
+      <div class="signature-container" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px"
+           fxLayout.lt-md="column" fxLayoutAlign.lt-md="start start" fxLayoutGap.lt-md="0px">
         <h4 class="title">Protected</h4>
         <h5 class="subtitle">{{signature.protected}}</h5>
       </div>

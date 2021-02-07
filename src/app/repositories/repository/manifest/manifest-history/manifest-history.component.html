@@ -9,17 +9,20 @@
     <div class="card-container" *ngFor="let history of manifest.history; index as index">
 
       <div class="header-row">
-        <div fxLayoutAlign="space-between center" class="header-row">
+        <div class="header-row" fxLayout="row" fxLayoutAlign="space-between center"
+             fxLayout.lt-md="column" fxLayoutAlign.lt-md="start start">
           <h4 class="title">{{history.compatibility.id}}</h4>
           <h4 class="subtitle">{{history.compatibility.created | date:'dd.MM.yyyy HH:mm:ss'}}</h4>
         </div>
 
-        <div fxLayoutAlign="space-between center" *ngIf="history.compatibility.container">
+        <div *ngIf="history.compatibility.container" fxLayout="row" fxLayoutAlign="space-between center"
+             fxLayout.lt-md="column" fxLayoutAlign.lt-md="start start">
           <h4 class="title">Container</h4>
           <h4 class="subtitle">{{history.compatibility.container}}</h4>
         </div>
 
-        <div fxLayoutAlign="space-between center" *ngIf="history.compatibility.docker_version">
+        <div *ngIf="history.compatibility.docker_version" fxLayout="row" fxLayoutAlign="space-between center"
+             fxLayout.lt-md="column" fxLayoutAlign.lt-md="start start">
           <h4 class="title">Docker version</h4>
           <h4 class="subtitle">{{history.compatibility.docker_version}}</h4>
         </div>

@@ -17,8 +17,6 @@
 
     transition: 0.2s;
 
-    border-bottom: 2px solid $white;
-
     &.active {
       color: $primary;
       border-color: $primary;
