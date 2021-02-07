@@ -2,7 +2,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {fadeInAnimation} from '../../animations/fadeInAnimation';
 import {Router} from '@angular/router';
 import {CardAction} from '../../../core/types/card-action';
-import {CardSize} from '../../../core/types/card-size';
+import {Size} from '../../../core/types/size';
 
 @Component({
   selector: 'app-card',
@@ -25,7 +25,7 @@ export class CardComponent {
   description: string = undefined;
 
   @Input()
-  size = CardSize.NORMAL;
+  size = Size.NORMAL;
 
   @Input()
   iconLeft = undefined;

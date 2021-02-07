@@ -1,6 +1,6 @@
 <div class="bar-container" fxLayoutAlign="space-between center" [@fadeInAnimation]>
   <h2 class="spacing-title bar-title secondary">{{repository}}</h2>
-  <app-button [route]="'repositories'" [text]="'Back to repositories'" [style]="Style.PRIMARY"></app-button>
+  <app-button [route]="'/'" [text]="'Back to repositories'" [style]="Style.PRIMARY"></app-button>
 </div>
 
 <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="tags">

@@ -2,7 +2,7 @@ import {Component, Input} from '@angular/core';
 import {Router} from '@angular/router';
 import {Style} from '../../../core/types/style';
 import {Shape} from '../../../core/types/shape';
-import {CardSize} from '../../../core/types/card-size';
+import {Size} from '../../../core/types/size';
 
 @Component({
   selector: 'app-button',
@@ -15,10 +15,10 @@ export class ButtonComponent {
   style = Style.PRIMARY;
 
   @Input()
-  shape =  Shape.RECTANGLE;
+  shape = Shape.RECTANGLE;
 
   @Input()
-  size = CardSize.NORMAL;
+  size = Size.NORMAL;
 
   @Input()
   height = 'auto';
@@ -33,7 +33,10 @@ export class ButtonComponent {
   text: string = undefined;
 
   @Input()
-  icon: string = undefined;
+  iconLeft: string = undefined;
+
+  @Input()
+  iconRight: string = undefined;
 
   @Input()
   route: string = undefined;
@@ -41,8 +44,8 @@ export class ButtonComponent {
   constructor(private router: Router) {
   }
 
-  navigate(): void {
-    if (this.route && !this.disabled) {
+  action(): void {
+    if (!this.disabled && this.route) {
       this.router.navigate([this.route]).then();
     }
   }

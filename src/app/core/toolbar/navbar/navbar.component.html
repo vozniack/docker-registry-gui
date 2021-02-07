@@ -1,8 +1,6 @@
-<ul>
-  <li *ngFor="let route of routes">
-    <a [routerLink]="route.route" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: route.exact }">
-      <i-feather name="{{route.icon}}" class="icon"></i-feather>
-      {{route.name}}
-    </a>
-  </li>
-</ul>
+<div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="16px">
+  <app-button *ngFor="let route of routes" [text]="route.name" [iconLeft]="route.icon" [route]="route.route"
+              [style]="Style.PRIMARY_OUTLINE" [size]="Size.BIG">
+  </app-button>
+</div>
+

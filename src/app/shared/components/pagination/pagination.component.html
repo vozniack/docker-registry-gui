@@ -2,30 +2,31 @@
 
   <!-- static previous pages buttons -->
 
-  <app-button class="pagination-button" [icon]="'chevrons-left'" [size]="CardSize.SMALL" (click)="firstPage()"
-              [disabled]="pagesAmount < 3 || page === 1">
+  <app-button class="pagination-button" [iconRight]="'chevrons-left'" [size]="Size.SMALL" (click)="firstPage()"
+              [disabled]="pagesAmount < 3 || page === 1" [tooltip]="'First page'">
   </app-button>
 
-  <app-button class="pagination-button" [icon]="'chevron-left'" [size]="CardSize.SMALL" (click)="prevPage()"
-              [disabled]="page === 1">
+  <app-button class="pagination-button" [iconRight]="'chevron-left'" [size]="Size.SMALL" (click)="prevPage()"
+              [disabled]="page === 1" [tooltip]="'Previous page'">
   </app-button>
 
   <!-- dynamic page buttons -->
 
   <div *ngFor="let p of pages" fxLayout="row" fxLayoutAlign="end center">
     <app-button *ngIf="this.canShowPage(p)" class="pagination-button" [active]="p === page" [text]="p.toString()"
-                (click)="this.changePage(p)">
+                [size]="Size.SMALL" [tooltip]="'Page ' + p"
+                (click)="this.changePage(p)" [@fadeInAnimation]>
     </app-button>
   </div>
 
   <!-- static next pages buttons -->
 
-  <app-button class="pagination-button" [icon]="'chevron-right'" [size]="CardSize.SMALL" (click)="nextPage()"
-              [disabled]="page === pagesAmount">
+  <app-button class="pagination-button" [iconRight]="'chevron-right'" [size]="Size.SMALL" (click)="nextPage()"
+              [disabled]="pagesAmount === 0 || (pagesAmount > 0 && page === pagesAmount)" [tooltip]="'Next page'">
   </app-button>
 
-  <app-button class="pagination-button" [icon]="'chevrons-right'" [size]="CardSize.SMALL" (click)="lastPage()"
-              [disabled]="pagesAmount < 3 || page === pagesAmount">
+  <app-button class="pagination-button" [iconRight]="'chevrons-right'" [size]="Size.SMALL" (click)="lastPage()"
+              [disabled]="pagesAmount < 3 || page === pagesAmount" [tooltip]="'Last page'">
   </app-button>
 
 </div>

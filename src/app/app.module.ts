@@ -2,7 +2,6 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {DashboardComponent} from './dashboard/dashboard.component';
 import {ErrorComponent} from './error/error.component';
 import {RepositoriesModule} from './repositories/repositories.module';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
@@ -20,7 +19,6 @@ import {ErrorInterceptor} from './core/interceptor/error-interceptor';
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
     ErrorComponent
   ],
   imports: [

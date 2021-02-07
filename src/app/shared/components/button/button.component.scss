@@ -3,7 +3,8 @@
 .button {
   padding: 6px 12px;
   font-weight: bold;
-  transition: background-color, border, color 0.2s;
+  letter-spacing: 0.4px;
+  transition:  0.2s;
 
   &:hover {
     cursor: pointer;
@@ -26,13 +27,13 @@
 }
 
 .primary-outline {
-  background-color: $white;
-  border: 2px solid $primary;
-  color: $primary;
+  border: 2px solid $white;
+  color: $white;
 
   &:hover {
-    background-color: $primary;
-    color: $white;
+    background-color: $white;
+    border: 2px solid $white;
+    color: $primary;
   }
 }
 
@@ -61,20 +62,32 @@
 
 .text {
   margin-top: -2px;
+
+  &.no-icon {
+    margin: -2px 8px 0 8px;
+  }
 }
 
 .icon {
   transform: scale(0.8);
 
-  &.margin {
+  &.left {
+    margin-right: 12px;
+  }
+
+  &.right {
     margin-left: 12px;
+  }
+
+  &.zero-margin {
+    margin: 0 !important;
   }
 }
 
 /* Shape */
 
 .rectangle {
-  border-radius: 6px;
+  border-radius: 8px;
 }
 
 .circle {
@@ -90,24 +103,40 @@
   font-size: 13px;
 
   .text {
-    margin: 0 12px 0 0;
+    margin-top: 1px;
   }
 
   .icon {
     transform: scale(0.7);
+
+    &.left {
+      margin-right: 8px;
+    }
+
+    &.right {
+      margin-left: 8px;
+    }
   }
 }
 
 .big {
-  padding: 8px 16px;
-  font-size: 22px;
+  padding: 12px 16px;
+  font-size: 18px;
 
   .text {
-    margin: 0 12px 0 0;
+    margin-top: 0;
   }
 
   .icon {
-    margin: 2px 0 0 0;
     transform: scale(1.0);
+
+    &.left {
+      margin-right: 16px;
+    }
+
+    &.right {
+      margin-left: 16px;
+    }
+
   }
 }

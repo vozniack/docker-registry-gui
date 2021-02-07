@@ -5,6 +5,7 @@ import {NavbarComponent} from './navbar/navbar.component';
 import {RouterModule} from '@angular/router';
 import {FlexModule} from '@angular/flex-layout';
 import {IconsModule} from '../icons/icons.module';
+import {ComponentsModule} from '../../shared/components/components.module';
 
 const COMPONENTS = [
   ToolbarComponent,
@@ -20,6 +21,7 @@ const COMPONENTS = [
     RouterModule,
     FlexModule,
     IconsModule,
+    ComponentsModule,
   ],
   exports: [
     ...COMPONENTS

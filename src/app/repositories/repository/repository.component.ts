@@ -1,12 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {fadeInAnimation} from '../../shared/animations/fadeInAnimation';
 import {Tags} from '../../core/model/domain/v1/tags';
 import {RepositoryService} from '../repository.service';
 import {Manifest} from '../../core/model/domain/v1/manifest';
 import {environment} from '../../../environments/environment';
 import {CardAction} from '../../core/types/card-action';
-import {CardSize} from '../../core/types/card-size';
+import {Size} from '../../core/types/size';
 import {NotificationsService} from '../../core/notifications/notifications.service';
 import {Style} from '../../core/types/style';
 
@@ -28,11 +28,12 @@ export class RepositoryComponent implements OnInit {
 
   loading = false;
 
-  CardSize = CardSize;
+  CardSize = Size;
   CardAction = CardAction;
   Style = Style;
 
-  constructor(private activatedRouter: ActivatedRoute,
+  constructor(private router: Router,
+              private activatedRouter: ActivatedRoute,
               private repositoryService: RepositoryService,
               private notificationsService: NotificationsService) {
   }
@@ -46,10 +47,14 @@ export class RepositoryComponent implements OnInit {
     this.loading = true;
 
     this.repositoryService.getTags(this.repository).subscribe(response => {
-      this.tags = response;
+      this.tags = response.body;
 
       if (this.tags.tags.length > 0) {
         this.setActive(this.tags.tags[0]);
+      }
+    }, error => {
+      if (error.status === 404) {
+        this.router.navigate(['']);
       }
     });
   }
@@ -105,5 +110,9 @@ export class RepositoryComponent implements OnInit {
     this.getManifest();
 
     this.cmd = 'docker pull ' + environment.registryUrl + '/' + this.repository + ':' + this.active;
+  }
+
+  redirect(): void {
+    this.router.navigate(['/']);
   }
 }

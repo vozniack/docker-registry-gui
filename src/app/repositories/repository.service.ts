@@ -20,8 +20,8 @@ export class RepositoryService {
     return this.httpClient.get<Catalog>(`${this.apiUrl}/_catalog`, {observe: 'response'});
   }
 
-  getTags(repository: string): Observable<Tags> {
-    return this.httpClient.get<Tags>(`${this.apiUrl}/${repository}/tags/list`);
+  getTags(repository: string): Observable<HttpResponse<Tags>> {
+    return this.httpClient.get<Tags>(`${this.apiUrl}/${repository}/tags/list`, {observe: 'response'});
   }
 
   getManifest(repository: string, tag: string): Observable<HttpResponse<Manifest>> {
