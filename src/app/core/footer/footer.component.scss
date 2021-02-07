@@ -1,0 +1,18 @@
+@import "src/styles/variables";
+
+.footer-container {
+  position: fixed;
+
+  bottom: 12px;
+  left: 12px;
+
+  a {
+    color: rgba($gray, 0.25);
+    text-decoration: none;
+    transition: 0.2s;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+}

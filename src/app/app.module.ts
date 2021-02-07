@@ -3,6 +3,7 @@ import {NgModule} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {ErrorComponent} from './error/error.component';
+import {FooterComponent} from './core/footer/footer.component';
 import {RepositoriesModule} from './repositories/repositories.module';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -19,7 +20,8 @@ import {ErrorInterceptor} from './core/interceptor/error-interceptor';
 @NgModule({
   declarations: [
     AppComponent,
-    ErrorComponent
+    ErrorComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
