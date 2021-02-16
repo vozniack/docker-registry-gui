@@ -3,12 +3,12 @@
 <div class="manifest-container" fxLayout="column" fxLayoutAlign="center center">
 
   <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="start start" fxLayoutGap="24px" fxFill>
-    <app-manifest-metadata [manifest]="manifest" *ngIf="activeTab === 'basic-information'" fxFill
-                           fxFlex="25" fxFlex.lt-md="100">
+    <app-manifest-metadata [manifest]="manifest" [manifestV2]="manifestV2" *ngIf="activeTab === 'basic-information'"
+                           fxFill fxFlex="25" fxFlex.lt-md="100">
     </app-manifest-metadata>
 
-    <app-manifest-signatures [manifest]="manifest" *ngIf="activeTab === 'basic-information'" fxFill
-                             fxFlex="75" fxFlex.lt-md="100">
+    <app-manifest-signatures [manifest]="manifest" [manifestV2]="manifestV2" *ngIf="activeTab === 'basic-information'"
+                             fxFill fxFlex="75" fxFlex.lt-md="100">
     </app-manifest-signatures>
   </div>
 
@@ -18,7 +18,7 @@
   <app-manifest-history [manifest]="manifest" *ngIf="activeTab === 'history'" fxFill>
   </app-manifest-history>
 
-  <app-manifest-layers [manifest]="manifest" *ngIf="activeTab === 'layers'" fxFill>
+  <app-manifest-layers [manifestV2]="manifestV2" *ngIf="activeTab === 'layers'" fxFill>
   </app-manifest-layers>
 </div>
 

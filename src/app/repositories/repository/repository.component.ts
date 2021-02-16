@@ -9,6 +9,7 @@ import {CardAction} from '../../core/types/card-action';
 import {Size} from '../../core/types/size';
 import {NotificationsService} from '../../core/notifications/notifications.service';
 import {Style} from '../../core/types/style';
+import {ManifestV2} from '../../core/model/domain/v2/manifest-v2';
 
 @Component({
   selector: 'app-repository',
@@ -25,8 +26,10 @@ export class RepositoryComponent implements OnInit {
 
   tags: Tags;
   manifest: Manifest;
+  manifestV2: ManifestV2;
 
   loading = false;
+  deleted = false;
 
   CardSize = Size;
   CardAction = CardAction;
@@ -75,15 +78,40 @@ export class RepositoryComponent implements OnInit {
         this.loading = false;
       }, error => {
         if (error.status === 400) {
-          this.loading = false;
-          this.notificationsService.error('Unknown manifest - the repository has been probably deleted');
+          this.tags.tags.splice(this.tags.tags.indexOf(this.active), 1);
+
+          if (this.tags.tags.length > 0) {
+            this.setActive(this.tags.tags[0]);
+          } else {
+            this.loading = false;
+            this.deleted = true;
+          }
         }
       });
     }
   }
 
+  getManifestV2(): void {
+    this.repositoryService.getManifestV2(this.repository, this.active).subscribe(response => {
+      this.manifestV2 = response.body;
+    });
+  }
+
   deleteManifest(): void {
-    this.notificationsService.error('Deletion has been temporarily disabled');
+    this.repositoryService.deleteManifest(this.repository, this.manifestV2.config.digest).subscribe(response => {
+      if (response.status === 202) {
+        this.notificationsService.success('Repository have been removed. It will disappear from the list after the garbage collection process.');
+      }
+    }, error => this.notificationsService.error(error.statusText));
+  }
+
+  setActive(tag: string): void {
+    this.active = tag;
+
+    this.getManifest();
+    this.getManifestV2();
+
+    this.cmd = 'docker pull ' + environment.registryUrl + '/' + this.repository + ':' + this.active;
   }
 
   copyToClipboard(): void {
@@ -103,16 +131,5 @@ export class RepositoryComponent implements OnInit {
     document.body.removeChild(tmp);
 
     this.notificationsService.success('Docker pull command have been copied to clipboard');
-  }
-
-  setActive(tag: string): void {
-    this.active = tag;
-    this.getManifest();
-
-    this.cmd = 'docker pull ' + environment.registryUrl + '/' + this.repository + ':' + this.active;
-  }
-
-  redirect(): void {
-    this.router.navigate(['/']);
   }
 }

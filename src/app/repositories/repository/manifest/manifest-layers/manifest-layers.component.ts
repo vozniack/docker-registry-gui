@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {fadeInAnimation} from '../../../../shared/animations/fadeInAnimation';
-import {Manifest} from '../../../../core/model/domain/v1/manifest';
+import {ManifestV2} from '../../../../core/model/domain/v2/manifest-v2';
 
 @Component({
   selector: 'app-manifest-layers',
@@ -11,5 +11,9 @@ import {Manifest} from '../../../../core/model/domain/v1/manifest';
 export class ManifestLayersComponent {
 
   @Input()
-  manifest: Manifest;
+  manifestV2: ManifestV2;
+
+  countSize(size: number): string {
+    return (size / 1024).toFixed(2);
+  }
 }

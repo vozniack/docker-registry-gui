@@ -1,13 +1,13 @@
-<div *ngIf="manifest" [@fadeInAnimation]>
+<div *ngIf="manifest && manifestV2" [@fadeInAnimation]>
 
   <div class="bar-container">
     <h3 class="spacing-title secondary">Metadata</h3>
   </div>
 
   <div class="card-container" fxLayout="column">
-    <div fxLayoutAlign="space-between center" >
+    <div fxLayoutAlign="space-between center">
       <h4 class="title">Schema version</h4>
-      <h5 class="subtitle">{{manifest.schemaVersion}}</h5>
+      <h5 class="subtitle">Combined</h5>
     </div>
 
     <div fxLayoutAlign="space-between center">
@@ -18,6 +18,11 @@
     <div fxLayoutAlign="space-between center">
       <h4 class="title">Tag</h4>
       <h5 class="subtitle">{{manifest.tag}}</h5>
+    </div>
+
+    <div fxLayoutAlign="space-between center" >
+      <h4 class="title">Size</h4>
+      <h5 class="subtitle">{{countSize()}} MB</h5>
     </div>
   </div>
 

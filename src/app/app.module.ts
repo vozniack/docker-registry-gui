@@ -16,6 +16,7 @@ import {ComponentsModule} from './shared/components/components.module';
 import {FlexModule} from '@angular/flex-layout';
 import {IconsModule} from './core/icons/icons.module';
 import {ErrorInterceptor} from './core/interceptor/error-interceptor';
+import {CacheInterceptor} from './core/interceptor/cache-interceptor';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,11 @@ import {ErrorInterceptor} from './core/interceptor/error-interceptor';
     IconsModule
   ],
   providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: CacheInterceptor,
+      multi: true
+    },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ErrorInterceptor,

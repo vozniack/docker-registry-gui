@@ -1,14 +1,15 @@
-<div *ngIf="manifest" [@fadeInAnimation]>
+<div *ngIf="manifestV2" [@fadeInAnimation]>
 
   <div class="bar-container">
     <h3 class="spacing-title secondary">Layers</h3>
   </div>
 
   <div fxLayout="column">
-    <div class="card-container" *ngFor="let layer of manifest.fsLayers"
-         fxLayout="row" fxLayoutAlign="space-between center" fxLayout.lt-md="column" fxLayoutAlign.lt-md="start start">
-      <h4 class="title">Blob sum</h4>
-      <h5 class="subtitle">{{layer.blobSum}}</h5>
+    <div class="card-container" *ngFor="let layer of manifestV2.layers"
+         fxLayout="row" fxLayoutAlign="space-between center"
+         fxLayout.lt-md="column" fxLayoutAlign.lt-md="start start">
+      <h4 class="title">{{layer.digest}}</h4>
+      <h5 class="subtitle">{{countSize(layer.size)}} kB</h5>
     </div>
   </div>
 

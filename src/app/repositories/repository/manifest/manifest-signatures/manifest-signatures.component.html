@@ -1,4 +1,4 @@
-<div *ngIf="manifest" [@fadeInAnimation]>
+<div *ngIf="manifest && manifestV2" [@fadeInAnimation]>
 
   <div *ngFor="let signature of manifest.signatures">
 
@@ -9,8 +9,14 @@
     <div class="card-container">
       <div class="signature-container" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px"
            fxLayout.lt-md="column" fxLayoutAlign.lt-md="start start" fxLayoutGap.lt-md="0px">
-        <h4 class="title">Digest</h4>
+        <h4 class="title">Digest v1</h4>
         <h5 class="subtitle">{{manifest.digest}}</h5>
+      </div>
+
+      <div class="signature-container" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px"
+           fxLayout.lt-md="column" fxLayoutAlign.lt-md="start start" fxLayoutGap.lt-md="0px">
+        <h4 class="title">Digest v2</h4>
+        <h5 class="subtitle">{{manifestV2.config.digest}}</h5>
       </div>
 
       <div class="signature-container" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px"

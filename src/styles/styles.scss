@@ -44,6 +44,19 @@ h1, h2, h3, h4, h5, h6 {
   padding: 2px 0 4px 0;
 }
 
+/* Link */
+
+a {
+  text-decoration: none;
+  transition: 0.2s;
+
+  color: $primary;
+
+  &:hover {
+    color: $secondary;
+  }
+}
+
 /* Containers */
 
 .card-container {

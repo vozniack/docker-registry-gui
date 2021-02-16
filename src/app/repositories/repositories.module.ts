@@ -13,6 +13,7 @@ import {ManifestHistoryComponent} from './repository/manifest/manifest-history/m
 import {ManifestLayersComponent} from './repository/manifest/manifest-layers/manifest-layers.component';
 import {ManifestHistoryConfigComponent} from './repository/manifest/manifest-history/manifest-history-config/manifest-history-config.component';
 import {ManifestHeaderComponent} from './repository/manifest/manifest-header/manifest-header.component';
+import {RepositoryDeletedComponent} from './repository/repository-deleted/repository-deleted.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {ManifestHeaderComponent} from './repository/manifest/manifest-header/man
     ManifestHistoryComponent,
     ManifestLayersComponent,
     ManifestHistoryConfigComponent,
-    ManifestHeaderComponent
+    ManifestHeaderComponent,
+    RepositoryDeletedComponent
   ],
   imports: [
     CommonModule,

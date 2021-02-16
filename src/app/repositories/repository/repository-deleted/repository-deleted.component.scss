@@ -1,0 +1,35 @@
+@import "../../../../styles/variables";
+
+.error-container {
+  margin-top: 64px;
+
+  h2 {
+    font-size: 40px;
+    letter-spacing: 2px;
+  }
+}
+
+.description-container {
+  padding: 24px 32px;
+
+  h4 {
+    font-size: 24px;
+
+    padding: 8px 0 8px 16px;
+    border-left: 4px solid $primary;
+  }
+
+  h5 {
+    font-size: 16px;
+    letter-spacing: 0.5px;
+
+    &.code {
+      margin-left: 16px;
+      border-left: 4px solid $gray-light;
+      padding: 6px 0 6px 12px;
+      letter-spacing: 1px;
+
+      font-size: 14px;
+    }
+  }
+}

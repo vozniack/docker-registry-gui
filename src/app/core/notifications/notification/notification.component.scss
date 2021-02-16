@@ -9,16 +9,17 @@
 
   background: $white;
 
+  box-shadow: 0 0 8px $gray-transparent;
+
   overflow: hidden;
   opacity: 1.0;
   transition: 0.2s;
 
   &.success {
-    border: 1px solid $primary;
-    box-shadow: 0 0 2px rgba($primary, 0.1);
+    border-left: 2px solid $primary;
 
     .message {
-      color: rgba($primary, 0.75);
+      color: $primary;
     }
 
     &:hover {
@@ -27,11 +28,10 @@
   }
 
   &.error {
-    border: 1px solid $error;
-    box-shadow: 0 0 2px rgba($error, 0.1);
+    border-left: 2px solid $error;
 
     .message {
-      color: rgba($error, 0.75);
+      color: $error;
     }
 
     &:hover {

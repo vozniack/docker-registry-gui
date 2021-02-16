@@ -24,4 +24,6 @@
             [marginTop]="!tags ? 256 : 172">
 </app-loader>
 
-<app-manifest *ngIf="!loading && manifest" [manifest]="manifest"></app-manifest>
+<app-manifest *ngIf="!loading && manifest" [manifest]="manifest" [manifestV2]="manifestV2"></app-manifest>
+
+<app-repository-deleted *ngIf="deleted"></app-repository-deleted>

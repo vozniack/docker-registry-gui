@@ -1,0 +1,35 @@
+<div fxLayout="column" fxLayoutGap="32px" [@fadeInAnimation]>
+
+  <div class="error-container" fxLayoutAlign="center center">
+    <h2 class="secondary">Oops... this repository have been deleted</h2>
+  </div>
+
+  <div class="description-container card-container" fxLayout="column" fxLayoutGap="32px">
+    <div fxLayout="column" fxLayoutGap="16px">
+      <h4 class="secondary">What does it mean?</h4>
+      <h5 class="gray">It looks like the tag or manifest doesn't exists, but registry still contains related directories.
+        It's not possible to delete repository just by Docker Registry API, so if you want to remove repository fully
+        you need to use garbage collector and manually delete directories on registry machine.
+      </h5>
+
+      <h5 class="secondary">Check more -
+        <a href="{{registryGarbageCollection}}" target="_blank">Garbage Collection</a>
+      </h5>
+    </div>
+
+    <div fxLayout="column" fxLayoutGap="16px">
+      <h4 class="secondary">What to do?</h4>
+      <h5 class="gray">To remove a repository completely you must execute the following commands:</h5>
+
+      <h5 class="code gray">bin/registry garbage-collect [--dry-run] /path/to/config.yml</h5>
+      <h5 class="code gray">rm -r /var/lib/registry/docker/registry/v2/repositories/repository/tag</h5>
+
+      <h5 class="secondary">Check more -
+        <a href="{{registryConfiguration}}" target="_blank">Registry configuration</a>
+      </h5>
+    </div>
+  </div>
+
+</div>
+
+
