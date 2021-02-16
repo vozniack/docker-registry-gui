@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  docker-registry:
+    image: registry:2.7.1
+    container_name: docker-registry
+    networks:
+      - docker-registry
+    ports:
+      - 5000:5000
+
+  docker-registry-gui:
+    image: docker-registry-gui:0.8
+    container_name: docker-registry-gui
+    networks:
+      - docker-registry
+    ports:
+      - 4200:80
+
+networks:
+  docker-registry:
+    name: docker-registry-network
+    driver: bridge
