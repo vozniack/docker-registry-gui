@@ -1,17 +1,17 @@
-# Compile angular frontend
+# Stage 1 - build registry gui
 
-FROM node:latest as build
-WORKDIR /app
-COPY . .
-RUN npm install
-RUN npm run build --prod
+FROM node:latest As builder
 
-# Serve app with nginx server
+WORKDIR /usr/src/app
+
+COPY package.json package-lock.json ./
+COPY .. .
+
+# Stage 2 - run registry gui
 
 FROM nginx:latest
+
 COPY nginx.conf /etc/nginx/nginx.conf
+COPY --from=builder /usr/src/app/dist/docker-registry-gui/ /usr/share/nginx/html
 
-RUN rm -rf /usr/share/nginx/html/*
-
-COPY --from=build /app/dist/docker-registry-gui /usr/share/nginx/html
 EXPOSE 80

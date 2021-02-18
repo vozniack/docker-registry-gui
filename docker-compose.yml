@@ -5,19 +5,18 @@ services:
     image: registry:2.7.1
     container_name: docker-registry
     networks:
-      - docker-registry
+      - docker-registry-network
     ports:
       - 5000:5000
 
   docker-registry-gui:
-    image: docker-registry-gui:0.8
+    image: docker-registry-gui:0.9
     container_name: docker-registry-gui
     networks:
-      - docker-registry
+      - docker-registry-network
     ports:
       - 4200:80
 
 networks:
-  docker-registry:
-    name: docker-registry-network
+  docker-registry-network:
     driver: bridge
